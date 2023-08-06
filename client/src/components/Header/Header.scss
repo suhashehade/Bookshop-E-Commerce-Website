@@ -1,0 +1,12 @@
+@import '../../assets/styles/SASS/colors.scss';
+
+.header{
+    height: 30vh;
+    background-image: linear-gradient(to right, $secondary_color, $blue, $black );
+    position: relative;
+   
+}
+
+.image{
+  rotate: 10deg;
+}

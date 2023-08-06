@@ -1,0 +1,14 @@
+@import '/src/assets/styles/SASS/colors.scss';
+
+.footer{
+    background-color: $black;
+    color: white;
+}
+
+.footer .contact-ball{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border-radius: 360px;
+    background-color: $blue;
+}

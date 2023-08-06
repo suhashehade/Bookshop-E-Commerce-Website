@@ -1,0 +1,73 @@
+@import "../../assets/styles/SASS/colors.scss";
+
+// .book-card{
+//     max-height: 600px;
+// }
+.book-card h5 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.book-card img {
+  position: relative;
+}
+
+.book-card p {
+  line-height: 5px;
+}
+.book-card:hover {
+  padding-top: 6px;
+  transition: 300ms;
+}
+
+.book-card:hover img {
+  width: 95%;
+  align-self: center;
+  transition: 300ms;
+  transform: rotate3d(-1, -1, -1, 3deg);
+  box-shadow: 6px 5px rgb(212, 211, 211);
+}
+
+.book-card .ribbon {
+  position: absolute;
+  top: 120px;
+  left: 0;
+  height: 30px;
+  width: 97%;
+  transition: 300ms;
+  transform: rotate3d(-1, -1, -1, 3deg);
+  background-color: rgba($color: red, $alpha: 0.6);
+  display: none;
+}
+
+.book_title {
+  text-decoration: none;
+  color: $black;
+}
+
+.ribbon .heart-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.book-card:hover .ribbon {
+  display: block;
+  cursor: pointer;
+}
+
+.blue-btn {
+  text-decoration: none;
+  border: $black 1px solid;
+  color: $black;
+}
+
+.blue-btn:hover {
+  color: rgba($color: $black, $alpha: 0.6);
+}
+
+.badge {
+  z-index: 12;
+}

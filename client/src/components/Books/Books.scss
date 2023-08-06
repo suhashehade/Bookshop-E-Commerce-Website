@@ -1,0 +1,8 @@
+@import '../../assets/styles/SASS/colors.scss';
+
+
+.slick-prev:before,
+.slick-next:before {
+  color: $blue !important;
+  font-size: 25px !important;
+}

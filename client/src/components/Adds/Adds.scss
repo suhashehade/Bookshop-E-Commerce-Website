@@ -1,0 +1,18 @@
+@import '../../assets/styles/SASS/colors.scss';
+
+.adds{
+    height: 400px;
+    position: relative;
+    background-image: url('../../assets/images/adds.jpg');
+    background-size: cover;
+    background-position: 0px -200px;
+}
+
+.adds-overlay{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba($black, 0.4);
+}

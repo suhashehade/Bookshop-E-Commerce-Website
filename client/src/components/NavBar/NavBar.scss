@@ -1,0 +1,27 @@
+@import "../../assets/styles/SASS/colors.scss";
+
+.nav {
+  position: absolute;
+  opacity: 0.9;
+  z-index: 111;
+}
+
+.cart-icon {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: 0;
+  left: 70%;
+}
+
+.wishlist-icon{
+  position: relative;
+}
+
+.wishlist-badge {
+  position: absolute;
+  top: 0;
+  left: 70%;
+}

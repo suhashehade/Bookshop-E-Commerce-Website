@@ -12,3 +12,12 @@
     border-radius: 360px;
     background-color: $blue;
 }
+
+.link-item{
+    color: $white;
+    text-decoration: none;
+}
+
+.link-item:hover{
+    color: rgba($color: $white, $alpha: 0.8);
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.scss";
 import { Icon } from "@iconify/react";
+import { Link } from "react-router-dom";
 function Footer() {
   return (
     <div className='footer p-3'>
@@ -40,17 +41,23 @@ function Footer() {
                     <Icon icon='ri:facebook-fill' color='white' fontSize={25} />
                   </span>
                 </li>
-                <li className='m-2'>
-                  <span className='contact-ball d-flex justify-content-center align-items-center'>
-                    <Icon icon='mdi:twitter' color='white' fontSize={25} />
-                  </span>
-                </li>
               </div>
             </ul>
           </div>
           <div className='col-md-4'>
-            <h3 className='mb-4'>Address</h3>
-            <p>1234 Elm Street, Cityville, Stateland, 98765</p>
+            <h3 className='mb-4'>Important links</h3>
+            <ul className='list-unstyled'>
+              <li>
+                <Link to='#' className='link-item'>
+                  Support
+                </Link>
+              </li>
+              <li>
+                <Link to='#' className='link-item'>
+                  Cancel Order
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
         <div className=''>

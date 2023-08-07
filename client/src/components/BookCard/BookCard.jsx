@@ -4,7 +4,6 @@ import StarRating from "./../StarRating/StarRating";
 import "./BookCard.scss";
 import { Icon } from "@iconify/react";
 import { Link, useNavigate } from "react-router-dom";
-import { Badge } from "react-bootstrap";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -53,9 +52,6 @@ function BookCard(props) {
         </div>
         <Card.Body>
           <p>{book.category.name}</p>
-          {/* <Badge className='badge' pill bg='warning'>
-            sale
-          </Badge> */}
           <Link to={`/bookDetails/${book.title}`} className='book_title'>
             <h5>{book.title}</h5>
           </Link>
@@ -68,7 +64,7 @@ function BookCard(props) {
             to={`/bookDetails/${book.title}`}
             className='blue-btn p-2 m-1 rounded'
           >
-            Add To Cart{" "}
+            <p className='d-inline'>Add To Cart</p>
             <Icon className='mb-1' icon='bi:cart' width='20' height='20' />
           </Link>
         </Card.Body>

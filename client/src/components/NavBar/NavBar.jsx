@@ -51,8 +51,8 @@ function NavBar() {
               <Nav.Link href='/'>New Releases</Nav.Link>
               <Nav.Link href='/'>Quotes</Nav.Link>
               <Nav.Link href='/'>Contact us</Nav.Link>
-              <div className='links ms-5 d-flex justify-content-start'>
-                <Nav.Link href='/cart' className='cart-icon'>
+              <div className='links ms-5 d-flex justify-content-center'>
+                <Nav.Link href='/cart' className='cart-icon m-2'>
                   <Badge className='cart-badge' pill bg='danger'>
                     {localStorage.cart !== undefined
                       ? JSON.parse(localStorage.cart).length
@@ -60,7 +60,7 @@ function NavBar() {
                   </Badge>
                   <Icon icon='bi:cart' width='30' height='30' />
                 </Nav.Link>
-                <Nav.Link href='/wishlist' className='wishlist-icon'>
+                <Nav.Link href='/wishlist' className='wishlist-icon m-2'>
                   <Badge className='wishlist-badge' pill bg='danger'>
                     {localStorage.wishlist !== undefined
                       ? JSON.parse(localStorage.wishlist).length

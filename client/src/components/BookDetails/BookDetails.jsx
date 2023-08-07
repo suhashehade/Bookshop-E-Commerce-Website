@@ -94,7 +94,7 @@ function BookDetails() {
   return (
     <div className=''>
       <NavBar />
-      <div className='book p-5'>
+      <div className='book p-3'>
         <div className='container'>
           <div className='row'>
             <div className='col-md-8 mb-3'>
@@ -113,7 +113,7 @@ function BookDetails() {
                     </div>
                   </div>
                   <div className='col-md-8 border rounded'>
-                    <div className='book_info p-4'>
+                    <div className='book_info p-3'>
                       <h3>Book Details</h3>
                       <ul className='list-unstyled'>
                         <li>Title: {book.title}</li>
@@ -130,7 +130,7 @@ function BookDetails() {
                     </div>
                   </div>
                 </div>
-                <div className='book_description border rounded p-5'>
+                <div className='book_description border rounded p-3'>
                   <h3>Book Description</h3>
                   <p>{book.description}</p>
                 </div>

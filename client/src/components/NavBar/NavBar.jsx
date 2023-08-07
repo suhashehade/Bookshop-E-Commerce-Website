@@ -28,9 +28,9 @@ function NavBar() {
                   Separated link
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href='#link'>Home</Nav.Link>
+              <Nav.Link href='/'>Home</Nav.Link>
 
-              <Nav.Link href='#link'>Most selling</Nav.Link>
+              <Nav.Link href='/'>Most selling</Nav.Link>
               <NavDropdown
                 id='nav-dropdown-light-example'
                 title='Authors'
@@ -48,11 +48,11 @@ function NavBar() {
                   Separated link
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href='#link'>New Releases</Nav.Link>
-              <Nav.Link href='#link'>Quotes</Nav.Link>
-              <Nav.Link href='#link'>Contact us</Nav.Link>
+              <Nav.Link href='/'>New Releases</Nav.Link>
+              <Nav.Link href='/'>Quotes</Nav.Link>
+              <Nav.Link href='/'>Contact us</Nav.Link>
               <div className='links ms-5 d-flex justify-content-start'>
-                <Nav.Link href='/cart' className="cart-icon">
+                <Nav.Link href='/cart' className='cart-icon'>
                   <Badge className='cart-badge' pill bg='danger'>
                     {localStorage.cart !== undefined
                       ? JSON.parse(localStorage.cart).length
@@ -60,10 +60,10 @@ function NavBar() {
                   </Badge>
                   <Icon icon='bi:cart' width='30' height='30' />
                 </Nav.Link>
-                <Nav.Link href='/cart' className='wishlist-icon'>
+                <Nav.Link href='/wishlist' className='wishlist-icon'>
                   <Badge className='wishlist-badge' pill bg='danger'>
-                    {localStorage.cart !== undefined
-                      ? JSON.parse(localStorage.cart).length
+                    {localStorage.wishlist !== undefined
+                      ? JSON.parse(localStorage.wishlist).length
                       : 0}
                   </Badge>
                   <Icon icon='mdi:heart-outline' width='30' height='30' />

@@ -46,7 +46,7 @@ function Quotations(props) {
     ],
   };
   return (
-    <div className='container p-5'>
+    <div className='container p-5' id="quotes">
       <h2>Quotes</h2>
       <Slider {...settings}>
         {quotations.map((q, k) => (

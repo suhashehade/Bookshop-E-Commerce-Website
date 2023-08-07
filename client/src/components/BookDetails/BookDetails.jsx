@@ -3,7 +3,6 @@ import "./BookDetails.scss";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { Icon } from "@iconify/react";
-import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import StarRating from "../StarRating/StarRating";
 import NavBar from "../NavBar/NavBar";
@@ -14,7 +13,7 @@ function BookDetails() {
   const [category, setCategory] = useState({});
   const [author, setAuthor] = useState({});
   const [cart, setCart] = useState([]);
-  const [deliverables, setDeliveracles] = useState("");
+  const [deliverables, setDeliverables] = useState("");
   const [quantity, setQuantity] = useState("");
   const navigate = useNavigate();
   let { bookTitle } = useParams();
@@ -46,7 +45,7 @@ function BookDetails() {
   };
 
   const handleDeliverables = (e) => {
-    setDeliveracles(e.target.value);
+    setDeliverables(e.target.value);
   };
 
   const storeInCart = () => {
@@ -68,7 +67,8 @@ function BookDetails() {
               quantity: parseInt(quantity),
               deliverables: deliverables,
             };
-            let newCart = [...cart, newCartItem];
+            let newCart = [...cart];
+            newCart.push(newCartItem);
             setCart(newCart);
             localStorage.cart = JSON.stringify(newCart);
             navigate("/cart");
@@ -87,7 +87,7 @@ function BookDetails() {
         navigate("/cart");
       }
     } else {
-      console.log("Please enter the quantity and deliverables way");
+      alert("Please enter the quantity and deliverables way");
     }
   };
 
@@ -139,7 +139,7 @@ function BookDetails() {
             <div className='col-md-4 border rounded p-4'>
               <Link to='#' className='btn btn-danger w-100'>
                 <Icon icon='bi:file-pdf' color='white' className='mb-1' />
-               <p className="d-inline ms-1">Preview PDF</p>
+                <p className='d-inline ms-1'>Preview PDF</p>
               </Link>
               <span className='seperate-line mb-3 mt-3'></span>
               <div className='form border rounded p-3'>

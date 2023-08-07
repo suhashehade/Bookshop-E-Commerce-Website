@@ -3,11 +3,30 @@ import Card from "react-bootstrap/Card";
 import StarRating from "./../StarRating/StarRating";
 import "./BookCard.scss";
 import { Icon } from "@iconify/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Badge } from "react-bootstrap";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function BookCard(props) {
   let book = props.book;
+  const [wishlist, setWishlist] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    let stordedWishlistItems = JSON.parse(localStorage.wishlist || "[]");
+    setWishlist(stordedWishlistItems);
+  }, wishlist);
+
+  const storeInWishlist = () => {
+    let wishlistItems = [...wishlist];
+    if (wishlist.find((i) => i.title === book.title) === undefined) {
+      wishlistItems.push(book);
+      setWishlist(wishlistItems);
+      localStorage.wishlist = JSON.stringify(wishlistItems);
+    }
+    navigate("/wishlist");
+  };
 
   return (
     <div className='book-card'>
@@ -21,7 +40,7 @@ function BookCard(props) {
             width='50%'
           />
         </div>
-        <div className='ribbon'>
+        <div className='ribbon' onClick={storeInWishlist}>
           <span className='heart-icon ps-1 pe-1 text-center'>
             <p className='text-white d-inline me-1'>Add to wishlist</p>
             <Icon

@@ -5,7 +5,7 @@ import "./Home.scss";
 function Home(props) {
   return (
     <div>
-      <div className='home'>
+      <div className='home' id='home'>
         <div className='home-overlay'>
           <NavBar />
           <div className='main-text d-flex flex-column justify-content-center align-items-center'>

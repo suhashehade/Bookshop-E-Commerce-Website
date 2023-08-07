@@ -5,7 +5,7 @@ import "./NewReleases.scss";
 function NewReleases(props) {
   let books = props.books;
   return (
-    <div className='newReleases p-5'>
+    <div className='newReleases p-5' id='newReleases'>
       <h2>What's new?</h2>
       <Carousel
         slide={true}

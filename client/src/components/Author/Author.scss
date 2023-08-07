@@ -1,21 +1,45 @@
-@import '../../assets/styles/SASS/colors.scss';
-.author{
-    height: 250px;
-    border-radius: 10px;
+@import "../../assets/styles/SASS/colors.scss";
+.author {
+  height: 250px;
+  border-radius: 10px;
 }
 
-.auhtor-picture{
-    height: 180px;
-    width: 180px;
-    border: 6px solid $blue;
-    border-radius: 360px;
-    box-shadow: 3px 3px 3px 3px rgba($color: #000000, $alpha: 0.5);
+.auhtor-picture {
+  position: relative;
+  height: 180px;
+  width: 180px;
+  border: 6px solid $blue;
+  border-radius: 360px;
+  box-shadow: 3px 3px 3px 3px rgba($color: #000000, $alpha: 0.5);
 }
 
-.auhtor-picture img{
-    border-radius: 360px;
+.auhtor-picture img {
+  border-radius: 360px;
 }
 
-.body{
-    height: 30%;
+.author-contact {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 168px;
+  width: 168px;
+  border-radius: 360px;
+  background-color: rgba($color: #000000, $alpha: 0.6);
+  transition: 300ms;
+  opacity: 0;
+}
+
+.auhtor-picture:hover .author-contact {
+  opacity: 1;
+}
+
+.author-contact-info {
+  height: 40px;
+  width: 40px;
+  border-radius: 360px;
+  text-align: center;
+}
+
+.body {
+  height: 30%;
 }

@@ -3,7 +3,6 @@ import "./Cart.scss";
 import NavBar from "../NavBar/NavBar";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Icon } from "@iconify/react";
 import Footer from "../Footer/Footer";
 import axios from "axios";
 import { Alert } from "react-bootstrap";
@@ -11,9 +10,7 @@ import validator from "validator";
 import { useForm } from "react-hook-form";
 
 function Cart() {
-  const [cartItems, setCartItems] = useState(
-    JSON.parse(localStorage.cart || "[]"),
-  );
+  const [cartItems, setCartItems] = useState([]);
   const [total, setTotal] = useState(0);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -32,6 +29,10 @@ function Cart() {
     setTotalCost();
   });
 
+  useEffect(() => {
+    setCartItems(JSON.parse(localStorage.cart || "[]"));
+  }, []);
+
   const setTotalCost = () => {
     let sum = 0;
     cartItems.forEach((i) => {
@@ -43,7 +44,8 @@ function Cart() {
 
   const removeFromCart = (e) => {
     let index = e.target.id;
-    let cart = JSON.parse(localStorage.cart || "[]");
+    console.log(index);
+    let cart = [...cartItems];
     cart.splice(index, 1);
     setCartItems(cart);
     setTotalCost();
@@ -168,11 +170,12 @@ function Cart() {
                     <td>{item.deliverables}</td>
                     <td>
                       <button
+                        type='button'
                         className='btn btn-danger'
                         id={index}
                         onClick={removeFromCart}
                       >
-                        <Icon icon='fluent:delete-20-regular' />
+                        X
                       </button>
                     </td>
                   </tr>

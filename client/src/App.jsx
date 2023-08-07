@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import BookDetails from "./components/BookDetails/BookDetails";
 import Cart from "./components/Cart/Cart";
+import Wishlist from "./components/Wishlist/Wishlist";
 
 function App() {
   const [categories, setCategories] = useState([]);
@@ -114,10 +115,8 @@ function App() {
           />
 
           <Route path='/bookDetails/:bookTitle' element={<BookDetails />} />
-          <Route
-            path='/cart'
-            element={<Cart />}
-          />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/wishlist' element={<Wishlist />} />
         </Routes>
       </Router>
     </div>

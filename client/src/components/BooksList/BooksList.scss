@@ -87,24 +87,19 @@
   }
 
   .all-books .book-details-p {
-    font-size: 10px;
+    font-size: 15px;
     overflow: visible;
     white-space: normal;
     height: 11px;
   }
 
   .all-books .book-card h5 {
-    font-size: 14px;
+    font-size: 18px;
   }
 
   .all-books .heart-outline-icon {
     width: 12px;
     height: 12px;
-  }
-
-  .all-books .add-cart-btn {
-    padding: 15px;
-    margin: 10px;
   }
 
   .all-books .add-cart-btn p {
@@ -115,27 +110,32 @@
     width: 20px;
     height: 20px;
   }
-
-  .all-books .star {
-    font-size: 20px;
-  }
 }
 
 @media screen and (max-width: 900px) and (min-width: 481px) {
-  .all-books .book-card p {
-    font-size: 10px;
-    height: 10px;
-    overflow: hidden;
-    white-space: nowrap;
+  .all-books .book-card .book-details-p {
+    font-size: 15px;
+    overflow: visible;
+    white-space: normal;
     text-overflow: ellipsis;
   }
 
   .all-books .book-card h5 {
-    font-size: 14px;
+    font-size: 18px;
   }
 
   .all-books .heart-outline-icon {
     width: 14px;
     height: 14px;
   }
+
+  // .all-books .add-cart-p {
+  //   height: 100%;
+  //   width: 70%;
+  //   font-size: 25px;
+  // }
+  // .all-books .cart-icon {
+  //   width: 20px;
+  //   height: 20px;
+  // }
 }

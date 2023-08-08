@@ -48,7 +48,7 @@ function Books(props) {
     ],
   };
   return (
-    <div className='p-5 books'>
+    <div className='books'>
       <div className='container'>
         <h2 className='mb-5 '>Most Selling Books</h2>
 

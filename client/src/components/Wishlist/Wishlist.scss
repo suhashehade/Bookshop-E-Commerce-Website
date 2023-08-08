@@ -13,14 +13,14 @@
     font-size: 18px;
   }
   .wishlist .book-card p {
-    font-size: 14px;
+    font-size: 15px;
     overflow: visible;
     white-space: normal;
     height: 11px;
   }
 
   .wishlist .book-card h5 {
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .wishlist .heart-outline-icon {
@@ -28,31 +28,18 @@
     height: 14px;
   }
 
-  .wishlist .star {
-    font-size: 20px;
-  }
-
-  .wishlist .add-cart-btn {
-    padding: 15px;
-    margin: 10px;
-  }
-
-  .wishlist .add-cart-btn p {
-    width: 70%;
-    font-size: 15px;
-  }
   .wishlist .cart-icon {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
   }
 }
 
 @media screen and (max-width: 900px) and (min-width: 481px) {
-  .all-books .book-card p {
-    font-size: 10px;
+  .all-books .book-card .book-details-p {
+    font-size: 15px;
     height: 10px;
-    overflow: hidden;
-    white-space: nowrap;
+    overflow: visible;
+    white-space: normal;
     text-overflow: ellipsis;
   }
 
@@ -63,5 +50,15 @@
   .wishlist .heart-outline-icon {
     width: 14px;
     height: 14px;
+  }
+
+  .wishlist .add-cart-p {
+    height: 100%;
+    width: 70%;
+    font-size: 20px;
+  }
+  .wishlist .cart-icon {
+    width: 20px;
+    height: 20px;
   }
 }

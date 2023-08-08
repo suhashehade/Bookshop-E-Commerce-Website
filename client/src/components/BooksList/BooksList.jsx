@@ -36,7 +36,7 @@ function BooksList(props) {
     <div className='books-list' id='most-selling'>
       <NavBar />
       <Header search={search} keyword={keyword} />
-      <div className='container p-5'>
+      <div className='container p-2'>
         <div className='logotext' onClick={menuToggle}>
           {menuCollapse ? (
             <p className='d-inline-block'>
@@ -93,7 +93,7 @@ function BooksList(props) {
             {books
               .filter((b) => b.title.toLowerCase().includes(keyword))
               .map((b) => (
-                <div className='col-lg-4 col-md-6'>
+                <div className='col-lg-4 col-md-12'>
                   <BookCard key={b.id} book={b} />
                 </div>
               ))}

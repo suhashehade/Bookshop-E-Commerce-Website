@@ -46,7 +46,7 @@ function Authors(props) {
     ],
   };
   return (
-    <div className='p-5 authors'>
+    <div className='p-4 authors'>
       <h2>Authors</h2>
       <Slider {...settings}>
         {authors.map((a) => (

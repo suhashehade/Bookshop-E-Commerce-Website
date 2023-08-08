@@ -139,7 +139,7 @@ function BookDetails() {
             <div className='col-md-4 border rounded p-4'>
               <Link to='#' className='btn btn-danger w-100'>
                 <Icon icon='bi:file-pdf' color='white' className='mb-1' />
-                <p className='d-inline ms-1'>Preview PDF</p>
+                <p className='d-inline ms-1 preview-pdf'>Preview PDF</p>
               </Link>
               <span className='seperate-line mb-3 mt-3'></span>
               <div className='form border rounded p-3'>

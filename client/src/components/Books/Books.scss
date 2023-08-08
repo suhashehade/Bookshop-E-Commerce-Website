@@ -1,8 +1,45 @@
-@import '../../assets/styles/SASS/colors.scss';
-
+@import "../../assets/styles/SASS/colors.scss";
 
 .slick-prev:before,
 .slick-next:before {
   color: $blue !important;
   font-size: 25px !important;
+}
+
+.see-more-btn {
+  padding: 5px;
+  height: 35px;
+  width: 120px;
+  text-decoration: none;
+  border: $black 1px solid;
+  color: $black;
+}
+
+.see-more-btn:hover {
+  color: rgba($color: $black, $alpha: 0.6);
+}
+
+.read-more {
+  font-size: 25px;
+}
+
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  .books h2 {
+    font-size: 18px;
+  }
+  .books p {
+    font-size: 10px;
+  }
+  .books .read-more {
+    font-size: 10px;
+  }
+  .books .see-more-btn {
+    height: 30px;
+    width: 70px;
+    padding: 1px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 481px) {
 }

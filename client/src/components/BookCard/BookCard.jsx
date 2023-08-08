@@ -44,8 +44,7 @@ function BookCard(props) {
             <p className='text-white d-inline me-1'>Add to wishlist</p>
             <Icon
               icon='mdi:heart-outline'
-              width='30'
-              height='30'
+              className='heart-outline-icon'
               color='white'
             />
           </span>
@@ -62,10 +61,10 @@ function BookCard(props) {
 
           <Link
             to={`/bookDetails/${book.title}`}
-            className='blue-btn p-2 m-1 rounded'
+            className='add-cart-btn rounded'
           >
             <p className='d-inline'>Add To Cart</p>
-            <Icon className='mb-1' icon='bi:cart' width='20' height='20' />
+            <Icon className='mb-1 cart-icon' icon='bi:cart' />
           </Link>
         </Card.Body>
       </Card>

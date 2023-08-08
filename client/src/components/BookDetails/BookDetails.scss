@@ -1,20 +1,29 @@
-@import '../../assets/styles/SASS/colors.scss';
+@import "../../assets/styles/SASS/colors.scss";
 
-.book{
-    width: 100%;
+.book {
+  width: 100%;
 }
 
-.seperate-line{
-    display: inline-block;
-    width: 100%;
-    height: 1px;
-    background-color: $blue;
+.seperate-line {
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  background-color: $blue;
 }
 
-.book_info li{
-    color: $blue;
+.book_info li {
+  color: $blue;
 }
 
-.book_description p{
-    color: $blue;
+.book_description p {
+  color: $blue;
+}
+
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  .book_info li {
+    font-size: 12px;
+  }
+  .book_description p {
+    font-size: 12px;
+  }
 }

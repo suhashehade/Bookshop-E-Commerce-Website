@@ -1,8 +1,5 @@
 @import "../../assets/styles/SASS/colors.scss";
 
-// .book-card{
-//     max-height: 600px;
-// }
 .book-card h5 {
   overflow: hidden;
   white-space: nowrap;
@@ -53,21 +50,59 @@
   width: 100%;
 }
 
+.heart-outline-icon {
+  width: 30px;
+  height: 30px;
+}
+
 .book-card:hover .ribbon {
   display: block;
   cursor: pointer;
 }
 
-.blue-btn {
+.add-cart-btn {
   text-decoration: none;
   border: $black 1px solid;
   color: $black;
+  padding: 10px;
+  margin: 10px;
 }
 
-.blue-btn:hover {
+.add-cart-btn:hover {
   color: rgba($color: $black, $alpha: 0.6);
 }
 
-.badge {
-  z-index: 12;
+.cart-icon {
+  width: 20px;
+  height: 20px;
+}
+
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  .book-card p {
+    font-size: 8px;
+  }
+
+  .book-card h5 {
+    font-size: 10px;
+  }
+
+  .heart-outline-icon {
+    width: 10px;
+    height: 10px;
+  }
+
+  .add-cart-btn {
+    padding: 1px;
+  }
+
+  .add-cart-btn p {
+    font-size: 5px;
+  }
+  .cart-icon {
+    width: 5px;
+    height: 5px;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 481px) {
 }

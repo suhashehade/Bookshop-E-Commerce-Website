@@ -1,27 +1,42 @@
-.home{
-    height: 50vh;
-    position: relative;
-    background-image: url('../../assets/images/home2.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: 0 -100px;
-    z-index: 0;
+.home {
+  height: 50vh;
+  position: relative;
+  background-image: url("../../assets/images/home2.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 0 -100px;
+  z-index: 0;
 }
 
-.home-overlay{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 1;
+.home-overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
-.main-text{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+.main-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  .home {
+    height: 40vh;
+  }
+  .home h1 {
+    font-size: 23px;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 481px) {
+  .home h1 {
+    font-size: 30px;
+  }
 }

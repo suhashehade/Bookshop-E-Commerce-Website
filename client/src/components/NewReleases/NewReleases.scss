@@ -1,10 +1,32 @@
-@import '../../assets/styles/SASS/colors.scss';
-.newReleases{
-    width: 100%;
-    height: 500px;
-    background-color: $secondary_color;
+@import "../../assets/styles/SASS/colors.scss";
+.newReleases {
+  width: 100%;
+  height: 600px;
+  background-color: $secondary_color;
 }
 
-.newReleases img{
-    rotate: -10deg;
+.newReleases img {
+  rotate: -10deg;
+}
+
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  .newReleases {
+    height: 400px;
+    background-color: $secondary_color;
+  }
+
+  .newReleases h2 {
+    font-size: 18px;
+  }
+
+  .newReleases h3 {
+    font-size: 15px;
+  }
+
+  .newReleases p {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 481px) {
 }

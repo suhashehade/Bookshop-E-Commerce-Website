@@ -1,12 +1,21 @@
-@import '../../assets/styles/SASS/colors.scss';
+@import "../../assets/styles/SASS/colors.scss";
 
-.header{
-    height: 30vh;
-    background-image: linear-gradient(to right, $secondary_color, $blue, $black );
-    position: relative;
-   
+.header {
+  height: 30vh;
+  background-image: linear-gradient(to right, $secondary_color, $blue, $black);
+  position: relative;
+  overflow: hidden;
 }
 
-.image{
+.image {
   rotate: 10deg;
+}
+
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  .header {
+    height: 60vh;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 481px) {
 }

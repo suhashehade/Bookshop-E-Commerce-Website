@@ -175,7 +175,7 @@ function Cart() {
                         id={index}
                         onClick={removeFromCart}
                       >
-                        X
+                        <p>X</p>
                       </button>
                     </td>
                   </tr>

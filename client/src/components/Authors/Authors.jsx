@@ -1,13 +1,14 @@
 import React from "react";
 import Slider from "react-slick";
 import Author from "../Author/Author";
+import "./Authors.scss";
 
 function Authors(props) {
   let authors = props.authors;
   let settings = {
     className: "center",
     centerMode: true,
-    dots: true,
+    dots: false,
     infinite: true,
     draggable: false,
     speed: 500,

@@ -89,7 +89,7 @@ function BooksList(props) {
               </SidebarContent>
             </ProSidebar>
           </div>
-          <div className='row books'>
+          <div className='row books all-books'>
             {books
               .filter((b) => b.title.toLowerCase().includes(keyword))
               .map((b) => (

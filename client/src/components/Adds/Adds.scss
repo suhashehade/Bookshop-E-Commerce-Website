@@ -1,18 +1,31 @@
-@import '../../assets/styles/SASS/colors.scss';
+@import "../../assets/styles/SASS/colors.scss";
 
-.adds{
-    height: 400px;
-    position: relative;
-    background-image: url('../../assets/images/adds.jpg');
-    background-size: cover;
-    background-position: 0px -200px;
+.adds {
+  height: 400px;
+  position: relative;
+  background-image: url("../../assets/images/adds.jpg");
+  background-size: cover;
+  background-position: 0px -200px;
 }
 
-.adds-overlay{
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background-color: rgba($black, 0.4);
+.adds-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($black, 0.4);
+}
+
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  .adds {
+    height: 240px;
+  }
+
+  .adds h3 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 481px) {
 }

@@ -7,3 +7,60 @@
   top: 0;
   left: 80%;
 }
+
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  .wishlist .book-card p {
+    font-size: 14px;
+  }
+
+  .wishlist .book-card h5 {
+    font-size: 15px;
+  }
+
+  .wishlist .heart-outline-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .wishlist .add-cart-btn {
+    padding: 1px;
+  }
+
+  .wishlist .add-cart-btn p {
+    font-size: 14px;
+  }
+  .wishlist .cart-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 481px) {
+  .all-books .book-card p {
+    font-size: 10px;
+    height: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .wishlist .book-card h5 {
+    font-size: 14px;
+  }
+
+  .wishlist .heart-outline-icon {
+    width: 14px;
+    height: 14px;
+  }
+  .wishlist .add-cart-btn {
+    padding: 1px;
+  }
+
+  .wishlist .add-cart-btn p {
+    font-size: 12px;
+  }
+  .wishlist .cart-icon {
+    width: 12px;
+    height: 12px;
+  }
+}

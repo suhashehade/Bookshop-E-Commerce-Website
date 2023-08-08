@@ -22,7 +22,7 @@ function Books(props) {
       {
         breakpoint: 990,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           infinite: true,
           dots: false,
           centerMode: true,
@@ -48,16 +48,18 @@ function Books(props) {
     ],
   };
   return (
-    <div className='p-5'>
+    <div className='p-5 books'>
       <div className='container'>
-        <div className='d-flex justify-content-between'>
-          <h2 className='mb-5'>Most Selling Books</h2>
-          <Link to='/products' className='blue-btn p-2 rounded h-25'>
-            see more <Icon icon='ic:round-read-more' fontSize={25} />
+        <h2 className='mb-5 '>Most Selling Books</h2>
+
+        <div className='d-flex flex-column justify-content-end align-items-end'>
+          <Link to='/products' className='see-more-btn rounded'>
+            <p className='d-inline'>see more</p>
+            <Icon icon='ic:round-read-more' className='read-more' />
           </Link>
         </div>
 
-        <Slider {...settings}>
+        <Slider {...settings} className='mt-2'>
           {books.map((b) => (
             <BookCard book={b} key={b._id} />
           ))}

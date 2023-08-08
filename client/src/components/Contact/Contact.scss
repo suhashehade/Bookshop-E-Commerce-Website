@@ -3,3 +3,22 @@
 .contact{
     background-color: $secondary_color;
 }
+
+
+@media screen and (max-width: 480px) and (min-width: 320px) {
+    .contact h2{
+        font-size: 18px;
+    }
+
+    .contact input, textarea:placeholder-shown{
+        font-size: 12px;
+    }
+
+    .contact button{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 900px) and (min-width: 481px) {
+   
+}

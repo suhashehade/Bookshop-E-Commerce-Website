@@ -1,13 +1,12 @@
-@import '../src/assets/styles/SASS/colors.scss';
+@import "../src/assets/styles/SASS/colors.scss";
 
 .App {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   background-color: $main_color;
   overflow: hidden;
 }
-.bg-wheat{
+.bg-wheat {
   background-color: $main_color;
 }
-
-
-
-

@@ -1,0 +1,20 @@
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  .table table {
+    font-size: 12px;
+  }
+
+  .table p {
+    font-size: 12px;
+  }
+
+  .user-info input:placeholder-shown {
+    font-size: 12px;
+  }
+
+  .user-info button {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 481px) {
+}

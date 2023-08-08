@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Author(props) {
   let author = props.author;
   return (
-    <div className='author m-2 p-3'>
+    <div className='author m-2'>
       <div className='auhtor-picture m-auto'>
         <img
           alt={author.name}
@@ -16,23 +16,21 @@ function Author(props) {
         ></img>
         <div className='author-contact'>
           <ul className='list-unstyled w-100 h-100 d-flex justify-content-center align-items-center'>
-            <li className='bg-light m-1 author-contact-info p-1'>
+            <li className='bg-light author-contact-info'>
               <Link to={`tel:${author.phone}`}>
                 <Icon
+                  className='phone-icon'
                   icon='gridicons:phone'
                   color='#000000'
-                  width={20}
-                  height={20}
                 />
               </Link>
             </li>
-            <li className='bg-light m-1 author-contact-info p-1'>
+            <li className='bg-light author-contact-info'>
               <Link to={`mailto:${author.email}`}>
                 <Icon
+                  className='email-icon'
                   icon='ic:baseline-email'
                   color='#000000'
-                  width={20}
-                  height={20}
                 />
               </Link>
             </li>

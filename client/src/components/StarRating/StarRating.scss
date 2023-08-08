@@ -1,0 +1,14 @@
+.star {
+  width: 25px;
+  height: 25px;
+}
+
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  .star {
+    width: 1px;
+    height: 1px;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 481px) {
+}

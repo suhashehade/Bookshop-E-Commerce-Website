@@ -24,21 +24,17 @@ function Footer() {
               <div className='d-flex'>
                 <li className='m-2'>
                   <span className='contact-ball d-flex justify-content-center align-items-center'>
-                    <Icon icon='ic:outline-email' color='white' fontSize={25} />
+                    <Icon icon='ic:outline-email' color='white' />
                   </span>
                 </li>
                 <li className='m-2'>
                   <span className='contact-ball d-flex justify-content-center align-items-center'>
-                    <Icon
-                      icon='ic:baseline-phone'
-                      color='white'
-                      fontSize={25}
-                    />
+                    <Icon icon='ic:baseline-phone' color='white' />
                   </span>
                 </li>
                 <li className='m-2'>
                   <span className='contact-ball d-flex justify-content-center align-items-center'>
-                    <Icon icon='ri:facebook-fill' color='white' fontSize={25} />
+                    <Icon icon='ri:facebook-fill' color='white' />
                   </span>
                 </li>
               </div>

@@ -52,7 +52,7 @@ function NavBar() {
               <Nav.Link href='/'>Quotes</Nav.Link>
               <Nav.Link href='/'>Contact us</Nav.Link>
               <div className='links ms-5 d-flex justify-content-center'>
-                <Nav.Link href='/cart' className='cart-icon m-2'>
+                <Nav.Link href='/cart' className='cart-icon-nav m-2'>
                   <Badge className='cart-badge' pill bg='danger'>
                     {localStorage.cart !== undefined
                       ? JSON.parse(localStorage.cart).length

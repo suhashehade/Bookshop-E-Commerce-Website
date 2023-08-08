@@ -62,10 +62,15 @@
 
 .add-cart-btn {
   text-decoration: none;
-  border: $black 1px solid;
-  color: $black;
-  padding: 10px;
+  border: green 1px solid;
+  color: green;
+  padding: 15px;
   margin: 10px;
+  text-align: center;
+}
+
+.add-cart-btn p {
+  width: 70%;
 }
 
 .add-cart-btn:hover {
@@ -78,8 +83,12 @@
 }
 
 @media screen and (max-width: 480px) and (min-width: 320px) {
-  .book-card p {
-    font-size: 8px;
+  .card-body .book-details-p {
+    font-size: 9px;
+    height: 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   .book-card h5 {
@@ -92,15 +101,25 @@
   }
 
   .add-cart-btn {
-    padding: 1px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 1px;
+    padding-right: 1px;
   }
 
-  .add-cart-btn p {
-    font-size: 5px;
+  .add-cart-btn .add-cart-p {
+    font-size: 8px;
+    width: 80%;
+    height: 10px;
   }
+
   .cart-icon {
-    width: 5px;
-    height: 5px;
+    width: 8px;
+    height: 8px;
+  }
+
+  .card-body .star {
+    font-size: 10px;
   }
 }
 

@@ -86,8 +86,11 @@
     visibility: hidden;
   }
 
-  .all-books .book-card p {
-    font-size: 12px;
+  .all-books .book-details-p {
+    font-size: 10px;
+    overflow: visible;
+    white-space: normal;
+    height: 11px;
   }
 
   .all-books .book-card h5 {
@@ -100,15 +103,21 @@
   }
 
   .all-books .add-cart-btn {
-    padding: 1px;
+    padding: 15px;
+    margin: 10px;
   }
 
   .all-books .add-cart-btn p {
-    font-size: 12px;
+    width: 70%;
+    font-size: 15px;
   }
   .all-books .cart-icon {
-    width: 12px;
-    height: 12px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .all-books .star {
+    font-size: 20px;
   }
 }
 
@@ -128,16 +137,5 @@
   .all-books .heart-outline-icon {
     width: 14px;
     height: 14px;
-  }
-  .all-books .add-cart-btn {
-    padding: 1px;
-  }
-
-  .all-books .add-cart-btn p {
-    font-size: 12px;
-  }
-  .all-books .cart-icon {
-    width: 12px;
-    height: 12px;
   }
 }

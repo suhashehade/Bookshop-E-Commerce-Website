@@ -22,9 +22,10 @@ function Wishlist() {
   };
 
   return (
-    <div>
+    <div className="wishlist-page">
       <NavBar />
       <div className='container pt-5 pb-5'>
+        <h2>Wishlist</h2>
         <div className='row wishlist'>
           {wishlistItems.map((b, index) => (
             <div className='col-lg-3 col-md-6 wishlist-item'>

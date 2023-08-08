@@ -7,7 +7,7 @@ function StarRating() {
         return (
           <Icon
             icon='material-symbols:star'
-            className='star'
+            className='star mb-2'
             color='orange'
             key={i}
           />

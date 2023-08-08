@@ -49,22 +49,22 @@ function BookCard(props) {
             />
           </span>
         </div>
-        <Card.Body>
-          <p>{book.category.name}</p>
+        <Card.Body className="card-body">
+          <p className="book-details-p">{book.category.name}</p>
           <Link to={`/bookDetails/${book.title}`} className='book_title'>
             <h5>{book.title}</h5>
           </Link>
-          <p>By: {book.author.name}</p>
+          <p className="book-details-p">By: {book.author.name}</p>
 
-          <p>price: ${book.price}</p>
+          <p className="book-details-p">price: ${book.price}</p>
           <StarRating />
 
           <Link
             to={`/bookDetails/${book.title}`}
-            className='add-cart-btn rounded'
+            className='add-cart-btn rounded m-auto'
           >
-            <p className='d-inline'>Add To Cart</p>
-            <Icon className='mb-1 cart-icon' icon='bi:cart' />
+            <p className='d-inline-block add-cart-p'>Add To Cart</p>
+            <Icon className='mb-1 cart-icon' icon='bi:cart' color='green' />
           </Link>
         </Card.Body>
       </Card>

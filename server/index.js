@@ -14,7 +14,7 @@ mongoose.connect(
 
 app.use(
   cors({
-    origin: ["https://knowledge-journey-bookshop.vercel.app"],
+    origin: ["*"],
     methods: ["POST", "GET", "DELETE", "PUT"],
     credentials: true,
   }),

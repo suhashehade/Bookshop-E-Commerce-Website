@@ -8,7 +8,7 @@ const Book = require("../models/Book");
 const Order = require("../models/Order");
 
 router.get("/", (req, res) => {
-  res.send("hello");
+  res.json("hello");
 });
 
 router.post("/user", function (req, res) {

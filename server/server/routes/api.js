@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const multer = require("multer");
+const upload = multer({ dest: "uploads/" });
 const User = require("../models/User");
 const Author = require("../models/Author");
 const Category = require("../models/Category");

@@ -14,6 +14,7 @@ function App() {
   const [authors, setAuthors] = useState([]);
   const [book, setBook] = useState({});
 
+  axios.defaults.withCredentials = true;
   useEffect(() => {
     getCategories();
   }, []);

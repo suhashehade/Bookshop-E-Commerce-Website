@@ -78,6 +78,7 @@ router.post("/author", function (req, res) {
       };
       let author = new Author(authorData);
       author.save();
+      res.end();
     }
   });
 });

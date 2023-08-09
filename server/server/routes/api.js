@@ -7,6 +7,9 @@ const Review = require("../models/Review");
 const Book = require("../models/Book");
 const Order = require("../models/Order");
 
+router.get("/", () => {
+  console.log("hello");
+});
 router.post("/user", function (req, res) {
   let userData = req.body;
   let user = new User(userData);

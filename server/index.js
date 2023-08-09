@@ -22,6 +22,7 @@ mongoose.connect(
 
 app.use(express.json());
 app.use(bodyParser.json());
+app.use(cors())
 app.use(upload());
 app.use("/uploads/covers", express.static("uploads/covers"));
 app.use("/uploads/authors", express.static("uploads/authors"));

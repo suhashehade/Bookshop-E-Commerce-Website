@@ -69,6 +69,7 @@ router.post("/author", function (req, res) {
     if (err) {
       res.send(err);
     } else {
+      res.status(400).send({ error: "Something broke!" });
       res.send("file uploaded");
       let authorData = {
         name: req.body.name,
@@ -81,7 +82,6 @@ router.post("/author", function (req, res) {
       res.end();
     }
   });
-  res.status(400).send({ error: "Something broke!" });
 });
 
 router.get("/author", async function (req, res) {

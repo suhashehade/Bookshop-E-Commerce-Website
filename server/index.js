@@ -8,10 +8,6 @@ const cors = require("cors");
 const app = express();
 const PORT = 4000;
 
-mongoose.connect(
-  "mongodb+srv://Suha:988456321_cse@cluster0.p47c2t1.mongodb.net/bookshop?retryWrites=true&w=majority",
-);
-
 app.use(
   cors({
     origin: ["*"],
@@ -19,10 +15,10 @@ app.use(
     credentials: true,
   }),
 );
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  next();
-});
+
+mongoose.connect(
+  "mongodb+srv://Suha:988456321_cse@cluster0.p47c2t1.mongodb.net/bookshop?retryWrites=true&w=majority",
+);
 
 app.use(express.json());
 app.use(bodyParser.json());

@@ -34,7 +34,9 @@ function BookCard(props) {
           <Card.Img
             variant='top'
             className='book_cover'
-            src={"http://localhost:4000/uploads/covers/" + book.cover}
+            src={
+              "https://online-bookshop.vercel.app/uploads/covers/" + book.cover
+            }
             height='55%'
             width='50%'
           />
@@ -49,14 +51,14 @@ function BookCard(props) {
             />
           </span>
         </div>
-        <Card.Body className="card-body">
-          <p className="book-details-p">{book.category.name}</p>
+        <Card.Body className='card-body'>
+          <p className='book-details-p'>{book.category.name}</p>
           <Link to={`/bookDetails/${book.title}`} className='book_title'>
             <h5>{book.title}</h5>
           </Link>
-          <p className="book-details-p">By: {book.author.name}</p>
+          <p className='book-details-p'>By: {book.author.name}</p>
 
-          <p className="book-details-p text-blue">price: ${book.price}</p>
+          <p className='book-details-p text-blue'>price: ${book.price}</p>
           <StarRating />
 
           <Link

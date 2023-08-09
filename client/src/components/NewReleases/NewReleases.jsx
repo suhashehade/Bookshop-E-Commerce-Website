@@ -23,7 +23,10 @@ function NewReleases(props) {
                   <img
                     width='50%'
                     height='80%'
-                    src={"http://localhost:4000/uploads/covers/" + b.cover}
+                    src={
+                      "https://online-bookshop.vercel.app/uploads/covers/" +
+                      b.cover
+                    }
                     alt='First slide'
                   />
                 </div>

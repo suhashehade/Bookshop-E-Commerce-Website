@@ -27,25 +27,27 @@ function App() {
   }, []);
 
   const getBook = () => {
-    axios.get("http://localhost:4000/book").then((response) => {
+    axios.get("https://online-bookshop.vercel.app/book").then((response) => {
       setBook(response.data);
     });
   };
 
   const getAuthors = () => {
-    axios.get("http://localhost:4000/authors").then((response) => {
+    axios.get("https://online-bookshop.vercel.app/authors").then((response) => {
       setAuthors(response.data);
     });
   };
 
   const getCategories = () => {
-    axios.get("http://localhost:4000/categories").then((response) => {
-      setCategories(response.data);
-    });
+    axios
+      .get("https://online-bookshop.vercel.app/categories")
+      .then((response) => {
+        setCategories(response.data);
+      });
   };
 
   const getBooks = () => {
-    axios.get("http://localhost:4000/books").then((response) => {
+    axios.get("https://online-bookshop.vercel.app/books").then((response) => {
       setBooks(response.data);
     });
   };

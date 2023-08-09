@@ -92,7 +92,7 @@ function Cart() {
       };
       axios({
         method: "post",
-        url: "http://localhost:4000/order",
+        url: "https://online-bookshop.vercel.app/order",
         data: orderDetails,
       }).then(function (response) {
         localStorage.clear();
@@ -175,7 +175,7 @@ function Cart() {
                         id={index}
                         onClick={removeFromCart}
                       >
-                        <p className="d-inline">X</p>
+                        <p className='d-inline'>X</p>
                       </button>
                     </td>
                   </tr>

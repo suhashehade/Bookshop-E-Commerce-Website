@@ -29,7 +29,7 @@ function BookDetails() {
 
   const getBook = () => {
     axios
-      .get(`http://localhost:4000/book?title=${bookTitle}`)
+      .get(`https://online-bookshop.vercel.app/book?title=${bookTitle}`)
       .then((response) => {
         setBook(response.data[0]);
         setCategory(response.data[0].category);
@@ -105,7 +105,8 @@ function BookDetails() {
                       <img
                         alt={book.title}
                         src={
-                          "http://localhost:4000/uploads/covers/" + book.cover
+                          "https://online-bookshop.vercel.app/uploads/covers/" +
+                          book.cover
                         }
                         height='100%'
                         width='100%'

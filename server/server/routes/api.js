@@ -80,8 +80,8 @@ router.post("/author", function (req, res) {
       author.save();
       res.end();
     }
-    res.status(500).send({ error: "Something broke!" });
   });
+  res.status(500).send({ error: "Something broke!" });
 });
 
 router.get("/author", async function (req, res) {

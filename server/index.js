@@ -10,7 +10,7 @@ const PORT = 4000;
 
 app.use(
   cors({
-    origin: ["*"],
+    origin: ["https://knowledge-journey-bookshop.vercel.app"],
     methods: ["POST", "GET", "DELETE", "PUT"],
     credentials: true,
   }),
@@ -22,7 +22,7 @@ mongoose.connect(
 
 app.use(express.json());
 app.use(bodyParser.json());
-app.use(cors())
+app.use(cors());
 app.use(upload());
 app.use("/uploads/covers", express.static("uploads/covers"));
 app.use("/uploads/authors", express.static("uploads/authors"));

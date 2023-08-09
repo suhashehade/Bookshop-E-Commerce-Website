@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const multer = require("multer");
-const upload = multer({ dest: "uploads/" });
+// const multer = require("multer");
+// const upload = multer({ dest: "uploads/" });
 const User = require("../models/User");
 const Author = require("../models/Author");
 const Category = require("../models/Category");
@@ -64,26 +64,27 @@ router.get("/category", async function (req, res) {
   res.send(category);
 });
 
-router.post("/author", upload.array("files"), function (req, res) {
-  let picture = req.files.picture;
-  let picture_name = picture.name.split(".")[0] + Date.now() + ".png";
-  console.log(picture_name);
-  res.end();
-  picture.mv("uploads/authors/" + picture_name, function (err) {
-    if (err) {
-      res.send(err);
-    } else {
-      res.send("file uploaded");
-      let authorData = {
-        name: req.body.name,
-        picture: picture_name,
-        email: req.body.email,
-        phone: req.body.phone,
-      };
-      let author = new Author(authorData);
-      author.save();
-    }
-  });
+router.post("/author", function (req, res) {
+  let picture = req.files;
+  res.send(picture)
+  // let picture_name = picture.name.split(".")[0] + Date.now() + ".png";
+  // console.log(picture_name);
+  // res.end();
+  // picture.mv("uploads/authors/" + picture_name, function (err) {
+  //   if (err) {
+  //     res.send(err);
+  //   } else {
+  //     res.send("file uploaded");
+  //     let authorData = {
+  //       name: req.body.name,
+  //       picture: picture_name,
+  //       email: req.body.email,
+  //       phone: req.body.phone,
+  //     };
+  //     let author = new Author(authorData);
+  //     author.save();
+  //   }
+  // });
 });
 
 router.get("/author", async function (req, res) {

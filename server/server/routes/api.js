@@ -49,6 +49,10 @@ router.get("/categories", function (req, res) {
     })
     .catch(() => {
       res.status(500).send({ error: "Something broke!" });
+      res.status(501).send({ error: "Something broke!" });
+      res.status(502).send({ error: "Something broke!" });
+      res.status(503).send({ error: "Something broke!" });
+      res.status(504).send({ error: "Something broke!" });
     });
 });
 

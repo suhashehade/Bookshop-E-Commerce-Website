@@ -80,6 +80,7 @@ router.post("/author", function (req, res) {
       author.save();
       res.end();
     }
+    res.status(500).send({ error: "Something broke!" });
   });
 });
 

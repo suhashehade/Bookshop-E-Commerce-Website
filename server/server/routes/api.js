@@ -62,7 +62,7 @@ router.get("/category", async function (req, res) {
   res.send(category);
 });
 
-router.post("/author", function (req, res) {
+router.post("/author", upload.array("files"), function (req, res) {
   let picture = req.files.picture;
   let picture_name = picture.name.split(".")[0] + Date.now() + ".png";
   console.log(picture_name);

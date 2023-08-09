@@ -56,7 +56,7 @@ function BookCard(props) {
           </Link>
           <p className="book-details-p">By: {book.author.name}</p>
 
-          <p className="book-details-p">price: ${book.price}</p>
+          <p className="book-details-p text-blue">price: ${book.price}</p>
           <StarRating />
 
           <Link
@@ -64,7 +64,7 @@ function BookCard(props) {
             className='add-cart-btn rounded m-auto'
           >
             <p className='d-inline-block add-cart-p'>Add To Cart</p>
-            <Icon className='mb-1 cart-icon' icon='bi:cart' color='green' />
+            <Icon className='mb-1 cart-icon' icon='bi:cart' />
           </Link>
         </Card.Body>
       </Card>

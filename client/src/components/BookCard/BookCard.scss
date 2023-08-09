@@ -1,6 +1,5 @@
 @import "../../assets/styles/SASS/colors.scss";
 
-
 .book-card h5 {
   overflow: hidden;
   white-space: nowrap;
@@ -41,6 +40,10 @@
   color: $black;
 }
 
+.text-blue{
+  color: $blue;
+}
+
 .ribbon .heart-icon {
   position: absolute;
   top: 0;
@@ -60,8 +63,8 @@
 
 .add-cart-btn {
   text-decoration: none;
-  border: green 1px solid;
-  color: green;
+  border: $secondary_color 1px solid;
+  color: $secondary_color;
   padding: 15px;
   margin: 10px;
   text-align: center;
@@ -72,12 +75,13 @@
 }
 
 .add-cart-btn:hover {
-  color: rgba($color: $black, $alpha: 0.6);
+  color: rgba($color: $secondary_color, $alpha: 0.8);
 }
 
 .cart-icon {
   width: 20px;
   height: 20px;
+  color: $secondary_color;
 }
 
 @media screen and (max-width: 480px) and (min-width: 320px) {
@@ -108,7 +112,7 @@
 }
 
 @media screen and (max-width: 900px) and (min-width: 481px) {
-  .book-card{
+  .book-card {
     padding-bottom: 5px;
   }
 }

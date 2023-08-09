@@ -65,6 +65,7 @@ router.get("/category", async function (req, res) {
 router.post("/author", function (req, res) {
   let picture = req.files.picture;
   let picture_name = picture.name.split(".")[0] + Date.now() + ".png";
+  res.send(picture_name);
   picture.mv("uploads/authors/" + picture_name, function (err) {
     if (err) {
       res.send(err);
@@ -81,7 +82,6 @@ router.post("/author", function (req, res) {
       res.end();
     }
   });
-  res.send("file not uploaded");
 });
 
 router.get("/author", async function (req, res) {

@@ -68,21 +68,22 @@ router.post("/author", function (req, res) {
   let picture = req.files.picture;
   let picture_name = picture.name.split(".")[0] + Date.now() + ".png";
   console.log(picture_name);
-  picture.mv("uploads/authors/" + picture_name, function (err) {
-    if (err) {
-      res.status(500).send({ error: "error 500" });
-    } else {
-      res.send("file uploaded");
-      let authorData = {
-        name: req.body.name,
-        picture: picture_name,
-        email: req.body.email,
-        phone: req.body.phone,
-      };
-      let author = new Author(authorData);
-      author.save();
-    }
-  });
+  res.end()
+  // picture.mv("uploads/authors/" + picture_name, function (err) {
+  //   if (err) {
+  //     res.status(500).send({ error: "error 500" });
+  //   } else {
+  //     res.send("file uploaded");
+  //     let authorData = {
+  //       name: req.body.name,
+  //       picture: picture_name,
+  //       email: req.body.email,
+  //       phone: req.body.phone,
+  //     };
+  //     let author = new Author(authorData);
+  //     author.save();
+  //   }
+  // });
 });
 
 router.get("/author", async function (req, res) {

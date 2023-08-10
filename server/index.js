@@ -23,8 +23,8 @@ mongoose.connect(
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(upload());
-app.use("/uploads/covers", express.static(path.join(__dirname, "public")));
-app.use("/uploads/authors", express.static(path.join(__dirname, "public")));
+app.use("/public/uploads/covers", express.static("public/uploads/covers"));
+app.use("/public/uploads/authors", express.static("public/uploads/authors"));
 app.use("/", api);
 app.listen(PORT, function () {
   console.log(`server is listen on port: ${PORT}`);

@@ -69,7 +69,7 @@ router.post("/author", function (req, res) {
   let picture_name = picture.name.split(".")[0] + Date.now() + ".png";
   picture.mv("uploads/authors/" + picture_name, function (err) {
     if (err) {
-      res.status(500).send({ error: "error: uploaded failed" });
+      res.status(500).send({ error: err });
     } else {
       res.send("file uploaded");
       let authorData = {

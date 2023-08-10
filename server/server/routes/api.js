@@ -67,8 +67,7 @@ router.get("/category", async function (req, res) {
 router.post("/author", function (req, res) {
   let picture = req.files.picture;
   let picture_name = picture.name.split(".")[0] + Date.now() + ".png";
-  console.log(picture_name);
-  res.end()
+  res.send(picture_name);
   // picture.mv("uploads/authors/" + picture_name, function (err) {
   //   if (err) {
   //     res.status(500).send({ error: "error 500" });

@@ -71,7 +71,7 @@ router.post("/author", function (req, res) {
   res.end();
   picture.mv("uploads/authors/" + picture_name, function (err) {
     if (err) {
-      res.send(err);
+      res.status(500).send({error: "error 500"});
     } else {
       res.send("file uploaded");
       let authorData = {

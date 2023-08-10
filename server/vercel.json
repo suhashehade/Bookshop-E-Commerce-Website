@@ -13,11 +13,11 @@
       }, 
       {
         "src": "/public/uploads/authors/(.*)",
-        "dest": "/public/uploads/authors/$1"
+        "dest": "public/uploads/authors/$1"
       },
       {
         "src": "/public/uploads/covers/(.*)",
-        "dest": "/public/uploads/covers/$1"
+        "dest": "public/uploads/covers/$1"
       }
     ]
   }

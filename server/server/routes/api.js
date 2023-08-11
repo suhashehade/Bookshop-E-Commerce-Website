@@ -70,7 +70,7 @@ router.post("/author", function (req, res) {
     let picture_name = picture.name.split(".")[0] + Date.now() + ".png";
     picture.mv("public/" + picture_name, function (err) {
       if (err) {
-        res.send({ error: "this is the error:" + err });
+        res.send({ error: err });
       } else {
         let authorData = {
           name: req.body.name,

@@ -20,7 +20,7 @@ mongoose.connect(
   "mongodb+srv://Suha:988456321_cse@cluster0.p47c2t1.mongodb.net/bookshop?retryWrites=true&w=majority",
 );
 
-app.use(express.json({ limit: "50mb" }));
+app.use(express.json());
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 app.use(express.static(path.join(__dirname, "tmp")));

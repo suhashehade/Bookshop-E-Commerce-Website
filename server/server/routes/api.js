@@ -69,14 +69,14 @@ router.post("/author", function (req, res) {
   if (!req.files || Object.keys(req.files).length === 0) {
     return res.status(400).json({ message: "No files were uploaded." });
   }
-  
+
   let picture = req.files.picture;
-  
-  try{
+
+  try {
     let temp = picture.tempFilePath;
-    res.send("success")
-  }catch{
-    res.status(500).send({message: "server error"})
+    res.send({ success: temp });
+  } catch {
+    res.status(500).send({ message: "server error" });
   }
   // cloudinary.uploader.upload(
   //   picture.tempFilePath,

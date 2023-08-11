@@ -13,9 +13,9 @@
     ],
     "routes": [
       {
-        "src": "/(.+)$",
+        "src": "/(.*)$",
         "dest": "public/$1"
-      } ,
+      },
       {
         "src": "/(.*)",
         "dest": "index.js"

@@ -22,6 +22,8 @@ mongoose.connect(
 
 app.use(express.json());
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "tmp")));
 app.use(upload({ useTempFiles: true }));
 app.use("/", api);
 app.listen(PORT, function () {

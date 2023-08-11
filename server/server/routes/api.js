@@ -71,35 +71,28 @@ router.post("/author", function (req, res) {
   }
 
   let picture = req.files.picture;
-
-  try {
-    let temp = picture.tempFilePath;
-    res.send({ success: temp });
-  } catch {
-    res.status(500).send({ message: "server error" });
-  }
-  // cloudinary.uploader.upload(
-  //   picture.tempFilePath,
-  //   {
-  //     public_id: `${Date.now()}`,
-  //     resource_type: "auto",
-  //   },
-  //   function (err, result) {
-  //     if (err) {
-  //       res.send({ error: err });
-  //     } else {
-  //       let authorData = {
-  //         name: req.body.name,
-  //         picture: result.url,
-  //         email: req.body.email,
-  //         phone: req.body.phone,
-  //       };
-  //       let author = new Author(authorData);
-  //       author.save();
-  //       res.send({ "file uploaded successfully": result });
-  //     }
-  //   },
-  // );
+  cloudinary.uploader.upload(
+    picture.tempFilePath,
+    {
+      public_id: `${Date.now()}`,
+      resource_type: "auto",
+    },
+    function (err, result) {
+      if (err) {
+        res.send({ error: err });
+      } else {
+        let authorData = {
+          name: req.body.name,
+          picture: result.url,
+          email: req.body.email,
+          phone: req.body.phone,
+        };
+        let author = new Author(authorData);
+        author.save();
+        res.send({ "file uploaded successfully": result });
+      }
+    },
+  );
 });
 
 router.get("/author", async function (req, res) {

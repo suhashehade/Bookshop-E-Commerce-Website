@@ -85,7 +85,6 @@ router.post("/author", function (req, res) {
     });
   } catch {
     res.status(500).send("server error");
-    res.status(404).send("not found");
   }
 });
 

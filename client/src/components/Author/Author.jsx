@@ -10,10 +10,7 @@ function Author(props) {
       <div className='auhtor-picture m-auto'>
         <img
           alt={author.name}
-          src={
-            "https://online-bookshop.vercel.app/uploads/authors/" +
-            author.picture
-          }
+          src={author.picture}
           width='100%'
           height='100%'
         ></img>

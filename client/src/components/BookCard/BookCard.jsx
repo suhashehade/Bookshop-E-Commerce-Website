@@ -34,9 +34,7 @@ function BookCard(props) {
           <Card.Img
             variant='top'
             className='book_cover'
-            src={
-              "https://online-bookshop.vercel.app/uploads/covers/" + book.cover
-            }
+            src={book.cover}
             height='55%'
             width='50%'
           />

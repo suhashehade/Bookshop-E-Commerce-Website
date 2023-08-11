@@ -14,11 +14,11 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "public/$1"
+        "dest": "index.js"
       },
       {
         "src": "/(.*)",
-        "dest": "index.js"
+        "dest": "public/$1"
       }
     ]
   }

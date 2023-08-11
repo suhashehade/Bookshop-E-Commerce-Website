@@ -6,7 +6,6 @@ const Category = require("../models/Category");
 const Review = require("../models/Review");
 const Book = require("../models/Book");
 const Order = require("../models/Order");
-const path = require("path");
 const cloudinary = require("cloudinary").v2;
 
 cloudinary.config({
@@ -16,7 +15,7 @@ cloudinary.config({
 });
 
 router.get("/", (req, res) => {
-  res.json("hello");
+  res.json("welccome to express server");
 });
 
 router.post("/user", function (req, res) {

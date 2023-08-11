@@ -74,7 +74,6 @@ router.post("/author", function (req, res) {
     return res.status(400).json({ message: "No files were uploaded." });
   }
   let picture = req.files.picture;
-  let picture_name = picture.name;
   cloudinary.uploader.upload(
     picture.tempFilePath,
     {

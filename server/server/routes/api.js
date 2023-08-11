@@ -69,7 +69,7 @@ router.post("/author", function (req, res) {
   }
   let picture = req.files.picture;
   let picture_name = picture.name.split(".")[0] + Date.now() + ".png";
-  const uploadPath = path.join("public", picture_name);
+  const uploadPath = path.join("public/uploads", picture_name);
   picture.mv(uploadPath, function (err) {
     if (err) {
       res.send({ error: err });

@@ -22,9 +22,9 @@ mongoose.connect(
 
 app.use(express.json());
 app.use(bodyParser.json());
-app.use(upload());
-
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
+app.use(upload());
 app.use("/", api);
 app.listen(PORT, function () {
   console.log(`server is listen on port: ${PORT}`);

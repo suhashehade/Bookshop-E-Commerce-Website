@@ -1,13 +1,12 @@
 const express = require("express");
 const router = express.Router();
-// const multer = require("multer");
-// const upload = multer({ dest: "uploads/" });
 const User = require("../models/User");
 const Author = require("../models/Author");
 const Category = require("../models/Category");
 const Review = require("../models/Review");
 const Book = require("../models/Book");
 const Order = require("../models/Order");
+const path = require("path");
 
 router.get("/", (req, res) => {
   res.json("hello");
@@ -65,27 +64,27 @@ router.get("/category", async function (req, res) {
 });
 
 router.post("/author", function (req, res) {
-  try {
-    let picture = req.files.picture;
-    let picture_name = picture.name.split(".")[0] + Date.now() + ".png";
-    picture.mv("public/" + picture_name, function (err) {
-      if (err) {
-        res.send({ error: err });
-      } else {
-        let authorData = {
-          name: req.body.name,
-          picture: picture_name,
-          email: req.body.email,
-          phone: req.body.phone,
-        };
-        let author = new Author(authorData);
-        author.save();
-        res.send("file uploaded");
-      }
-    });
-  } catch {
-    res.status(500).send("server error");
+  if (!req.files || Object.keys(req.files).length === 0) {
+    return res.status(400).json({ message: "No files were uploaded." });
   }
+  let picture = req.files.picture;
+  let picture_name = picture.name.split(".")[0] + Date.now() + ".png";
+  const uploadPath = path.join(__dirname, "public/uploads", picture_name);
+  picture.mv(uploadPath, function (err) {
+    if (err) {
+      res.send({ error: err });
+    } else {
+      let authorData = {
+        name: req.body.name,
+        picture: picture_name,
+        email: req.body.email,
+        phone: req.body.phone,
+      };
+      let author = new Author(authorData);
+      author.save();
+      res.send("file uploaded");
+    }
+  });
 });
 
 router.get("/author", async function (req, res) {

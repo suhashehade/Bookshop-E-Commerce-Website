@@ -68,7 +68,7 @@ router.post("/author", function (req, res) {
   try {
     let picture = req.files.picture;
     let picture_name = picture.name.split(".")[0] + Date.now() + ".png";
-    picture.mv("public/uploads/authors/" + picture_name, function (err) {
+    picture.mv("public/" + picture_name, function (err) {
       if (err) {
         res.send({ error: "this is the error:" + err });
       } else {

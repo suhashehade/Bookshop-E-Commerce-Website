@@ -3,11 +3,24 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const upload = require("express-fileupload");
+const fs = require("fs");
 const api = require("./server/routes/api");
 const cors = require("cors");
 const app = express();
 const PORT = 4000;
 
+fs.access(
+  "public/uploads/authors",
+  fs.constants.R_OK | fs.constants.W_OK,
+  (err) => {
+    if (err) {
+      console.error("Folder does not have read and write permissions:", err);
+      // You might want to handle this error accordingly
+    } else {
+      console.log("Folder has read and write permissions");
+    }
+  },
+);
 app.use(
   cors({
     origin: ["https://knowledge-journey-bookshop.vercel.app"],

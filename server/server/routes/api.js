@@ -7,6 +7,13 @@ const Review = require("../models/Review");
 const Book = require("../models/Book");
 const Order = require("../models/Order");
 const path = require("path");
+const cloudinary = require("cloudinary").v2;
+
+cloudinary.config({
+  cloud_name: "dg5uxt99f",
+  api_key: "821873525331824",
+  api_secret: "3IQUMNFQCfWL5RB8Q_SwkfDZTZE",
+});
 
 router.get("/", (req, res) => {
   res.json("hello");
@@ -68,23 +75,29 @@ router.post("/author", function (req, res) {
     return res.status(400).json({ message: "No files were uploaded." });
   }
   let picture = req.files.picture;
-  let picture_name = picture.name.split(".")[0] + Date.now() + ".png";
-  const uploadPath = path.join("public/uploads", picture_name);
-  picture.mv(uploadPath, function (err) {
-    if (err) {
-      res.send({ error: err });
-    } else {
-      let authorData = {
-        name: req.body.name,
-        picture: picture_name,
-        email: req.body.email,
-        phone: req.body.phone,
-      };
-      let author = new Author(authorData);
-      author.save();
-      res.send("file uploaded");
-    }
-  });
+  let picture_name = picture.name;
+  cloudinary.uploader.upload(
+    picture.tempFilePath,
+    {
+      public_id: `${Date.now()}`,
+      resource_type: "auto",
+    },
+    function (err, result) {
+      if (err) {
+        res.send({ error: err });
+      } else {
+        let authorData = {
+          name: req.body.name,
+          picture: result.url,
+          email: req.body.email,
+          phone: req.body.phone,
+        };
+        let author = new Author(authorData);
+        author.save();
+        res.send({ "file uploaded successfully": result });
+      }
+    },
+  );
 });
 
 router.get("/author", async function (req, res) {

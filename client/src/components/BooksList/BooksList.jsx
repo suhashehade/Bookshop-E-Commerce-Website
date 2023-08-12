@@ -19,21 +19,24 @@ import Footer from "../Footer/Footer";
 
 function BooksList(props) {
   const [keyword, setKeyword] = useState("");
+  const [menuCollapse, setMenuCollapse] = useState(false);
+  const [userFilters, setUserFilters] = useState([
+    { category: "" },
+    { min_price: 0, max_price: Infinity },
+    { author: "" },
+  ]);
   let categories = props.categories;
   let filters = props.filters;
   let books = props.books;
   let authors = props.authors;
-  const [menuCollapse, setMenuCollapse] = useState(false);
+
   const menuToggle = () => {
     setMenuCollapse(!menuCollapse);
   };
   const search = (title) => {
-    axios
-      .get(`https://online-bookshop.vercel.app/book?title=${title}`)
-      .then((response) => {
-        setKeyword(title);
-      });
+    setKeyword(title);
   };
+
   return (
     <div className='books-list' id='most-selling'>
       <NavBar />

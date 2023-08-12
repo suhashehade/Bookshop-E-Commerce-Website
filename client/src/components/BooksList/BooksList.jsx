@@ -84,27 +84,17 @@ function BooksList(props) {
                         {f.name === "Categories" ? (
                           categories.map((c) => (
                             <MenuItem key={c._id}>
-                              <a
-                                href='/'
-                                id={c.name}
-                                name='category'
-                                onClick={filter}
-                              >
+                              <p id={c.name} name='category' onClick={filter}>
                                 {c.name}
-                              </a>
+                              </p>
                             </MenuItem>
                           ))
                         ) : f.name === "Authors" ? (
                           authors.map((a) => (
                             <MenuItem key={a._id}>
-                              <a
-                                href='/'
-                                id={a.name}
-                                name='author'
-                                onClick={filter}
-                              >
+                              <p id={a.name} name='author' onClick={filter}>
                                 {a.name}
-                              </a>
+                              </p>
                             </MenuItem>
                           ))
                         ) : (

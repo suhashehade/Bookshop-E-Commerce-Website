@@ -59,7 +59,11 @@ function Cart() {
       setName(value);
     } else {
       if (id === "email") {
-        setEmail(value);
+        if (validateEmail()) {
+          setError("invalid email");
+        } else {
+          setEmail(value);
+        }
       } else {
         if (id === "phone") {
           setPhone(value);
@@ -105,12 +109,6 @@ function Cart() {
           "Congratulation! the order is submitted successfully, please check your email for more details",
         );
       });
-    }
-  };
-
-  const setEmailError = () => {
-    if (validateEmail()) {
-      setError("invalid email");
     }
   };
 
@@ -219,7 +217,6 @@ function Cart() {
                         message: "invalid email address",
                       },
                     })}
-                    onBlurCapture={setEmailError}
                     value={email}
                     placeholder='Email'
                     onChange={handleInputs}

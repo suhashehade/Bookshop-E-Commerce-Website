@@ -23,7 +23,7 @@ function BooksList(props) {
   const [category, setCategory] = useState("");
   const [author, setAuthor] = useState("");
   const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(100);
 
   let categories = props.categories;
   let filters = props.filters;

@@ -104,10 +104,7 @@ function BookDetails() {
                     <div className='book_cover border rounded mt-4 mb-2 w-100'>
                       <img
                         alt={book.title}
-                        src={
-                          "https://online-bookshop.vercel.app/uploads/covers/" +
-                          book.cover
-                        }
+                        src={book.cover}
                         height='100%'
                         width='100%'
                       ></img>

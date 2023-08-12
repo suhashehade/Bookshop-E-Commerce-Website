@@ -95,7 +95,7 @@ function Cart() {
         url: "https://online-bookshop.vercel.app/order",
         data: orderDetails,
       }).then(function (response) {
-        localStorage.clear();
+        localStorage.removeItem(localStorage.cart);
         setCartItems(JSON.parse(localStorage.cart || "[]"));
         setName("");
         setEmail("");

@@ -119,27 +119,36 @@ router.post("/review", function (req, res) {
 });
 
 router.post("/book", function (req, res) {
+  if (!req.files || Object.keys(req.files).length === 0) {
+    return res.status(400).json({ message: "No files were uploaded." });
+  }
   let cover = req.files.cover;
-  let coverName = cover.name.split(".")[0] + Date.now() + ".png";
-  cover.mv("uploads/covers/" + coverName, async function (err) {
-    if (err) {
-      res.send(err);
-    } else {
-      let authorName = req.body.author;
-      let categoryName = req.body.category;
-      let category = await Category.findOne({ name: categoryName }).exec();
-      let author = await Author.findOne({ name: authorName }).exec();
-      let book = new Book({
-        ...req.body,
-        cover: coverName,
-        category: category,
-        author: author,
-        reviews: [],
-      });
-      book.save();
-      res.end();
-    }
-  });
+  cloudinary.uploader.upload(
+    cover.tempFilePath,
+    {
+      public_id: `${Date.now()}`,
+      resource_type: "auto",
+    },
+    async function (err, result) {
+      if (err) {
+        res.send(err);
+      } else {
+        let authorName = req.body.author;
+        let categoryName = req.body.category;
+        let category = await Category.findOne({ name: categoryName }).exec();
+        let author = await Author.findOne({ name: authorName }).exec();
+        let book = new Book({
+          ...req.body,
+          cover: result.url,
+          category: category,
+          author: author,
+          reviews: [],
+        });
+        book.save();
+        res.end();
+      }
+    },
+  );
 });
 
 router.get("/books", function (req, res) {

@@ -137,10 +137,10 @@ function BooksList(props) {
               .filter(
                 (b) =>
                   b.title.toLowerCase().includes(keyword) ||
-                  (b.category.name === category &&
-                    b.author.name === author &&
-                    b.price >= minPrice &&
-                    b.price <= maxPrice),
+                  b.category.name === category ||
+                  b.author.name === author ||
+                  b.price >= minPrice ||
+                  b.price <= maxPrice,
               )
               .map((b) => (
                 <div className='col-lg-4 col-md-12'>

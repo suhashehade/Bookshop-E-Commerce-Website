@@ -145,7 +145,7 @@ router.post("/book", function (req, res) {
           reviews: [],
         });
         book.save();
-        res.end();
+        res.send({ "file uploaded successfully": result });
       }
     },
   );

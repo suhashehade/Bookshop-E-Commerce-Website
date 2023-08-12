@@ -86,7 +86,7 @@ function BooksList(props) {
                               value={c.name}
                               key={c._id}
                               name='category'
-                              onClick={filter}
+                              onSelect={filter}
                             >
                               {c.name}
                             </MenuItem>
@@ -97,7 +97,7 @@ function BooksList(props) {
                               value={a.name}
                               key={a._id}
                               name='author'
-                              onClick={filter}
+                              onSelect={filter}
                             >
                               {a.name}
                             </MenuItem>

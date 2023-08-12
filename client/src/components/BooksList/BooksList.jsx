@@ -14,7 +14,6 @@ import {
 } from "react-pro-sidebar";
 
 import "react-pro-sidebar/dist/css/styles.css";
-import axios from "axios";
 import Footer from "../Footer/Footer";
 
 function BooksList(props) {
@@ -40,10 +39,10 @@ function BooksList(props) {
   const filter = (e) => {
     let target = e.target;
     if (target.name === "category") {
-      setCategory(target.id);
+      setCategory(target.value);
     } else {
       if (target.name === "author") {
-        setAuthor(target.id);
+        setAuthor(target.value);
       } else {
         if (target.name === "minPrice") {
           setMinPrice(target.value);
@@ -84,8 +83,8 @@ function BooksList(props) {
                         {f.name === "Categories" ? (
                           categories.map((c) => (
                             <MenuItem
+                              value={c.name}
                               key={c._id}
-                              id={c.name}
                               name='category'
                               onClick={filter}
                             >
@@ -95,8 +94,8 @@ function BooksList(props) {
                         ) : f.name === "Authors" ? (
                           authors.map((a) => (
                             <MenuItem
+                              value={a.name}
                               key={a._id}
-                              id={a.name}
                               name='author'
                               onClick={filter}
                             >

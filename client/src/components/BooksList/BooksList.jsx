@@ -20,11 +20,11 @@ import Footer from "../Footer/Footer";
 function BooksList(props) {
   const [keyword, setKeyword] = useState("");
   const [menuCollapse, setMenuCollapse] = useState(false);
-  const [userFilters, setUserFilters] = useState([
-    { category: "" },
-    { min_price: 0, max_price: Infinity },
-    { author: "" },
-  ]);
+  const [category, setCategory] = useState("");
+  const [author, setAuthor] = useState("");
+  const [minPrice, setMinPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(0);
+
   let categories = props.categories;
   let filters = props.filters;
   let books = props.books;
@@ -35,6 +35,25 @@ function BooksList(props) {
   };
   const search = (title) => {
     setKeyword(title);
+  };
+
+  const filter = (e) => {
+    let target = e.target;
+    if (target.name === "category") {
+      setCategory(target.id);
+    } else {
+      if (target.name === "author") {
+        setAuthor(target.id);
+      } else {
+        if (target.name === "minPrice") {
+          setMinPrice(target.value);
+        } else {
+          if (target.name === "maxPrice") {
+            setMaxPrice(target.value);
+          }
+        }
+      }
+    }
   };
 
   return (
@@ -65,24 +84,48 @@ function BooksList(props) {
                         {f.name === "Categories" ? (
                           categories.map((c) => (
                             <MenuItem key={c._id}>
-                              <a href='/'>{c.name}</a>
+                              <a
+                                href='/'
+                                id={c.name}
+                                name='category'
+                                onClick={filter}
+                              >
+                                {c.name}
+                              </a>
                             </MenuItem>
                           ))
                         ) : f.name === "Authors" ? (
                           authors.map((a) => (
                             <MenuItem key={a._id}>
-                              <a href='/'>{a.name}</a>
+                              <a
+                                href='/'
+                                id={a.name}
+                                name='author'
+                                onClick={filter}
+                              >
+                                {a.name}
+                              </a>
                             </MenuItem>
                           ))
                         ) : (
                           <MenuItem>
                             <div className='d-flex justify-content-between'>
                               <div classname=''>
-                                <input type='number'></input>
+                                <input
+                                  type='number'
+                                  name='minPrice'
+                                  value={minPrice}
+                                  onChange={filter}
+                                ></input>
                               </div>
                               <p className='m-1'> - </p>
                               <div className=''>
-                                <input type='number'></input>
+                                <input
+                                  type='number'
+                                  name='maxPrice'
+                                  value={maxPrice}
+                                  onChange={filter}
+                                ></input>
                               </div>
                             </div>
                           </MenuItem>
@@ -96,7 +139,14 @@ function BooksList(props) {
           </div>
           <div className='row books all-books'>
             {books
-              .filter((b) => b.title.toLowerCase().includes(keyword))
+              .filter(
+                (b) =>
+                  b.title.toLowerCase().includes(keyword) ||
+                  b.category.name === category ||
+                  b.author.name === author ||
+                  b.price >= minPrice ||
+                  b.price <= maxPrice,
+              )
               .map((b) => (
                 <div className='col-lg-4 col-md-12'>
                   <BookCard key={b.id} book={b} />

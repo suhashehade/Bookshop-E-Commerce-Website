@@ -16,7 +16,7 @@ function Author(props) {
         ></img>
         <div className='author-contact'>
           <ul className='list-unstyled w-100 h-100 d-flex justify-content-center align-items-center'>
-            <li className='bg-light author-contact-info'>
+            <li className='bg-light author-contact-info d-flex justify-content-center align-items-center'>
               <Link to={`tel:${author.phone}`}>
                 <Icon
                   className='phone-icon'
@@ -25,7 +25,7 @@ function Author(props) {
                 />
               </Link>
             </li>
-            <li className='bg-light author-contact-info'>
+            <li className='bg-light author-contact-info d-flex justify-content-center align-items-center'>
               <Link to={`mailto:${author.email}`}>
                 <Icon
                   className='email-icon'

@@ -137,10 +137,10 @@ function BooksList(props) {
             {books
               .filter(
                 (b) =>
-                  b.title.toLowerCase().includes(keyword) ||
-                  b.category.name === category ||
-                  b.author.name === author ||
-                  b.price >= minPrice ||
+                  b.title.toLowerCase().includes(keyword) &&
+                  b.category.name === category &&
+                  b.author.name === author &&
+                  b.price >= minPrice &&
                   b.price <= maxPrice,
               )
               .map((b) => (

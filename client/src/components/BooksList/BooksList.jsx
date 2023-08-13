@@ -45,9 +45,9 @@ function BooksList(props) {
 
   const filteredBooks = books.filter((book) => {
     const meetsCategory =
-      !userFilters.category || book.category === userFilters.category;
+      !userFilters.category || book.category.name === userFilters.category;
     const meetsAuthor =
-      !userFilters.author || book.author === userFilters.author;
+      !userFilters.author || book.author.name === userFilters.author;
     const meetsMinPrice =
       !userFilters.minPrice || book.price >= parseFloat(userFilters.minPrice);
     const meetsMaxPrice =
@@ -88,7 +88,7 @@ function BooksList(props) {
                             ? userFilters.author
                             : null
                         }
-                        onSelect={(e) =>
+                        onChange={(e) =>
                           f.name === "Categories"
                             ? setUserFilters({
                                 ...userFilters,

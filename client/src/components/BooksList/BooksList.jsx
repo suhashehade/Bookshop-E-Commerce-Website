@@ -83,16 +83,32 @@ function BooksList(props) {
                         {f.name === "Categories" ? (
                           categories.map((c) => (
                             <MenuItem
-                              value={c.name}
+                              value={userFilters.category}
                               key={c._id}
                               name='category'
+                              onChange={(e) =>
+                                setUserFilters({
+                                  ...userFilters,
+                                  category: e.target.value,
+                                })
+                              }
                             >
                               {c.name}
                             </MenuItem>
                           ))
                         ) : f.name === "Authors" ? (
                           authors.map((a) => (
-                            <MenuItem value={a.name} key={a._id} name='author'>
+                            <MenuItem
+                              value={userFilters.author}
+                              key={a._id}
+                              name='author'
+                              onChange={(e) =>
+                                setUserFilters({
+                                  ...userFilters,
+                                  author: e.target.value,
+                                })
+                              }
+                            >
                               {a.name}
                             </MenuItem>
                           ))

@@ -88,7 +88,7 @@ function BooksList(props) {
                             ? userFilters.author
                             : null
                         }
-                        onChange={(e) =>
+                        onSelect={(e) =>
                           f.name === "Categories"
                             ? setUserFilters({
                                 ...userFilters,

@@ -35,9 +35,19 @@ function BooksList(props) {
   let authors = props.authors;
 
   const itemsPerPage = 6;
-
+  const filteredBooks = books.filter((book) => {
+    const meetsCategory =
+      !userFilters.category || book.category.name === userFilters.category;
+    const meetsAuthor =
+      !userFilters.author || book.author.name === userFilters.author;
+    const meetsMinPrice =
+      !userFilters.minPrice || book.price >= parseFloat(userFilters.minPrice);
+    const meetsMaxPrice =
+      !userFilters.maxPrice || book.price <= parseFloat(userFilters.maxPrice);
+    return meetsCategory && meetsAuthor && meetsMinPrice && meetsMaxPrice;
+  });
   const endOffset = itemOffset + itemsPerPage;
-  const currentItems = books.slice(itemOffset, endOffset);
+  const currentItems = filteredBooks().slice(itemOffset, endOffset);
   const pageCount = Math.ceil(books.length / itemsPerPage);
 
   const menuToggle = () => {
@@ -53,18 +63,6 @@ function BooksList(props) {
     );
     setItemOffset(newOffset);
   };
-
-  const filteredBooks = currentItems.filter((book) => {
-    const meetsCategory =
-      !userFilters.category || book.category.name === userFilters.category;
-    const meetsAuthor =
-      !userFilters.author || book.author.name === userFilters.author;
-    const meetsMinPrice =
-      !userFilters.minPrice || book.price >= parseFloat(userFilters.minPrice);
-    const meetsMaxPrice =
-      !userFilters.maxPrice || book.price <= parseFloat(userFilters.maxPrice);
-    return meetsCategory && meetsAuthor && meetsMinPrice && meetsMaxPrice;
-  });
 
   return (
     <div className='books-list' id='most-selling'>
@@ -168,7 +166,7 @@ function BooksList(props) {
             </ProSidebar>
           </div>
           <div className='row books all-books'>
-            {filteredBooks
+            {currentItems
               .filter((b) => b.title.toLowerCase().includes(keyword))
               .map((b) => (
                 <div className='col-lg-4 col-md-12'>
@@ -182,6 +180,16 @@ function BooksList(props) {
               pageRangeDisplayed={5}
               pageCount={pageCount}
               previousLabel='< previous'
+              pageClassName='page-item'
+              pageLinkClassName='page-link'
+              previousClassName='page-item'
+              previousLinkClassName='page-link'
+              nextClassName='page-item'
+              nextLinkClassName='page-link'
+              breakClassName='page-item'
+              breakLinkClassName='page-link'
+              containerClassName='pagination'
+              activeClassName='active'
               renderOnZeroPageCount={null}
             />
           </div>

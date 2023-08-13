@@ -24,6 +24,13 @@ function BooksList(props) {
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(100);
 
+  const [userFilters, setUserFilters] = useState({
+    category: "",
+    author: "",
+    minPrice: "",
+    maxPrice: "",
+  });
+
   let categories = props.categories;
   let filters = props.filters;
   let books = props.books;
@@ -110,8 +117,13 @@ function BooksList(props) {
                                 <input
                                   type='number'
                                   name='minPrice'
-                                  value={minPrice}
-                                  onChange={filter}
+                                  value={userFilters.minPrice}
+                                  onChange={(e) =>
+                                    setUserFilters({
+                                      ...userFilters,
+                                      minPrice: e.target.value,
+                                    })
+                                  }
                                 ></input>
                               </div>
                               <p className='m-1'> - </p>
@@ -119,8 +131,13 @@ function BooksList(props) {
                                 <input
                                   type='number'
                                   name='maxPrice'
-                                  value={maxPrice}
-                                  onChange={filter}
+                                  value={userFilters.maxPrice}
+                                  onChange={(e) =>
+                                    setUserFilters({
+                                      ...userFilters,
+                                      maxPrice: e.target.value,
+                                    })
+                                  }
                                 ></input>
                               </div>
                             </div>

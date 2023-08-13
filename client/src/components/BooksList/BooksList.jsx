@@ -43,25 +43,17 @@ function BooksList(props) {
     setKeyword(title);
   };
 
-  const filter = (e) => {
-    let target = e.target;
-    console.log(target);
-    // if (target.name === "category") {
-    //   setCategory(target.value);
-    // } else {
-    //   if (target.name === "author") {
-    //     setAuthor(target.value);
-    //   } else {
-    //     if (target.name === "minPrice") {
-    //       setMinPrice(target.value);
-    //     } else {
-    //       if (target.name === "maxPrice") {
-    //         setMaxPrice(target.value);
-    //       }
-    //     }
-    //   }
-    // }
-  };
+  const filteredBooks = books.filter((book) => {
+    const meetsCategory =
+      !userFilters.category || book.category === userFilters.category;
+    const meetsAuthor =
+      !userFilters.author || book.author === userFilters.author;
+    const meetsMinPrice =
+      !userFilters.minPrice || book.price >= parseFloat(userFilters.minPrice);
+    const meetsMaxPrice =
+      !userFilters.maxPrice || book.price <= parseFloat(userFilters.maxPrice);
+    return meetsCategory && meetsAuthor && meetsMinPrice && meetsMaxPrice;
+  });
 
   return (
     <div className='books-list' id='most-selling'>
@@ -94,19 +86,13 @@ function BooksList(props) {
                               value={c.name}
                               key={c._id}
                               name='category'
-                              onSelect={filter}
                             >
                               {c.name}
                             </MenuItem>
                           ))
                         ) : f.name === "Authors" ? (
                           authors.map((a) => (
-                            <MenuItem
-                              value={a.name}
-                              key={a._id}
-                              name='author'
-                              onSelect={filter}
-                            >
+                            <MenuItem value={a.name} key={a._id} name='author'>
                               {a.name}
                             </MenuItem>
                           ))
@@ -151,15 +137,8 @@ function BooksList(props) {
             </ProSidebar>
           </div>
           <div className='row books all-books'>
-            {books
-              .filter(
-                (b) =>
-                  b.title.toLowerCase().includes(keyword) ||
-                  b.category.name === category ||
-                  b.author.name === author ||
-                  b.price >= minPrice ||
-                  b.price <= maxPrice,
-              )
+            {filteredBooks
+              .filter((b) => b.title.toLowerCase().includes(keyword))
               .map((b) => (
                 <div className='col-lg-4 col-md-12'>
                   <BookCard key={b.id} book={b} />

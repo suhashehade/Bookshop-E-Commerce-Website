@@ -91,6 +91,7 @@ function BooksList(props) {
                               });
                             }}
                           >
+                            <option value=''>All Categories</option>
                             {categories.map((c) => (
                               <option value={c.name} key={c._id}>
                                 {c.name}
@@ -108,6 +109,7 @@ function BooksList(props) {
                               });
                             }}
                           >
+                            <option value=''>All Authors</option>
                             {authors.map((a) => (
                               <option value={a.name} key={a._id}>
                                 {a.name}

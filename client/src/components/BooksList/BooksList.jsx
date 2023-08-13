@@ -86,7 +86,7 @@ function BooksList(props) {
                               value={userFilters.category}
                               key={c._id}
                               name='category'
-                              onChange={(e) =>
+                              onSelect={(e) =>
                                 setUserFilters({
                                   ...userFilters,
                                   category: e.target.value,
@@ -102,7 +102,7 @@ function BooksList(props) {
                               value={userFilters.author}
                               key={a._id}
                               name='author'
-                              onChange={(e) =>
+                              onSelect={(e) =>
                                 setUserFilters({
                                   ...userFilters,
                                   author: e.target.value,

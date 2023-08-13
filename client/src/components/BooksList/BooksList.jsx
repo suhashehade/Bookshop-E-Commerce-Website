@@ -21,8 +21,8 @@ function BooksList(props) {
   const [menuCollapse, setMenuCollapse] = useState(false);
   const [category, setCategory] = useState("");
   const [author, setAuthor] = useState("");
-  const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(100);
+  // const [minPrice, setMinPrice] = useState(0);
+  // const [maxPrice, setMaxPrice] = useState(100);
 
   const [userFilters, setUserFilters] = useState({
     category: "",

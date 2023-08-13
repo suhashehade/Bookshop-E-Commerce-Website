@@ -166,13 +166,14 @@ function BooksList(props) {
             </ProSidebar>
           </div>
           <div className='row books all-books'>
-            {currentItems
-              .filter((b) => b.title.toLowerCase().includes(keyword))
-              .map((b) => (
-                <div className='col-lg-4 col-md-12'>
-                  <BookCard key={b.id} book={b} />
-                </div>
-              ))}
+            {currentItems ||
+              filteredBooks
+                .filter((b) => b.title.toLowerCase().includes(keyword))
+                .map((b) => (
+                  <div className='col-lg-4 col-md-12'>
+                    <BookCard key={b.id} book={b} />
+                  </div>
+                ))}
             <ReactPaginate
               breakLabel='...'
               nextLabel='next >'

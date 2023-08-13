@@ -79,36 +79,38 @@ function BooksList(props) {
                 <Menu iconShape='square'>
                   {filters.map((f) => (
                     <MenuItem key={f.id}>
-                      <SubMenu title={f.name}>
+                      <SubMenu
+                        title={f.name}
+                        value={
+                          f.name === "Categories"
+                            ? userFilters.category
+                            : f.name === "Authors"
+                            ? userFilters.author
+                            : null
+                        }
+                        onChange={(e) =>
+                          f.name === "Categories"
+                            ? setUserFilters({
+                                ...userFilters,
+                                category: e.target.value,
+                              })
+                            : f.name === "Authors"
+                            ? setUserFilters({
+                                ...userFilters,
+                                author: e.target.value,
+                              })
+                            : null
+                        }
+                      >
                         {f.name === "Categories" ? (
                           categories.map((c) => (
-                            <MenuItem
-                              value={userFilters.category}
-                              key={c._id}
-                              name='category'
-                              onClick={(e) =>
-                                setUserFilters({
-                                  ...userFilters,
-                                  category: e.target.value,
-                                })
-                              }
-                            >
+                            <MenuItem value={c.name} key={c._id}>
                               {c.name}
                             </MenuItem>
                           ))
                         ) : f.name === "Authors" ? (
                           authors.map((a) => (
-                            <MenuItem
-                              value={userFilters.author}
-                              key={a._id}
-                              name='author'
-                              onClick={(e) =>
-                                setUserFilters({
-                                  ...userFilters,
-                                  author: e.target.value,
-                                })
-                              }
-                            >
+                            <MenuItem value={a.name} key={a._id}>
                               {a.name}
                             </MenuItem>
                           ))

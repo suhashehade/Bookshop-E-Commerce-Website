@@ -38,16 +38,16 @@ function BooksList(props) {
 
   const filter = (e) => {
     let target = e.target;
-    if (target.name === "category") {
+    if (target.id === "category") {
       setCategory(target.value);
     } else {
-      if (target.name === "author") {
+      if (target.id === "author") {
         setAuthor(target.value);
       } else {
-        if (target.name === "minPrice") {
+        if (target.id === "minPrice") {
           setMinPrice(target.value);
         } else {
-          if (target.name === "maxPrice") {
+          if (target.id === "maxPrice") {
             setMaxPrice(target.value);
           }
         }
@@ -85,7 +85,7 @@ function BooksList(props) {
                             <MenuItem
                               value={c.name}
                               key={c._id}
-                              name='category'
+                              id='category'
                               onSelect={filter}
                             >
                               {c.name}
@@ -96,7 +96,7 @@ function BooksList(props) {
                             <MenuItem
                               value={a.name}
                               key={a._id}
-                              name='author'
+                              id='author'
                               onSelect={filter}
                             >
                               {a.name}
@@ -108,7 +108,7 @@ function BooksList(props) {
                               <div classname=''>
                                 <input
                                   type='number'
-                                  name='minPrice'
+                                  id='minPrice'
                                   value={minPrice}
                                   onChange={filter}
                                 ></input>
@@ -117,7 +117,7 @@ function BooksList(props) {
                               <div className=''>
                                 <input
                                   type='number'
-                                  name='maxPrice'
+                                  id='maxPrice'
                                   value={maxPrice}
                                   onChange={filter}
                                 ></input>

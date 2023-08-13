@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import Header from "../Header/Header";
 import NavBar from "../NavBar/NavBar";
 import { Icon } from "@iconify/react";
+import "../../../node_modules/react-paginate/theme/basic/react-paginate.css";
 import "./BooksList.scss";
 import {
   ProSidebar,

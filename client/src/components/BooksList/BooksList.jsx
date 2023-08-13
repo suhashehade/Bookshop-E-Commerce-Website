@@ -79,41 +79,39 @@ function BooksList(props) {
                 <Menu iconShape='square'>
                   {filters.map((f) => (
                     <MenuItem key={f.id}>
-                      <SubMenu
-                        title={f.name}
-                        value={
-                          f.name === "Categories"
-                            ? userFilters.category
-                            : f.name === "Authors"
-                            ? userFilters.author
-                            : null
-                        }
-                        onSelect={(e) =>
-                          f.name === "Categories"
-                            ? setUserFilters({
+                      <SubMenu title={f.name}>
+                        {f.name === "Categories" ? (
+                          <select
+                            value={userFilters.category}
+                            onChange={(e) => {
+                              setUserFilters({
                                 ...userFilters,
                                 category: e.target.value,
-                              })
-                            : f.name === "Authors"
-                            ? setUserFilters({
+                              });
+                            }}
+                          >
+                            {categories.map((c) => (
+                              <option value={c.name} key={c._id}>
+                                {c.name}
+                              </option>
+                            ))}
+                          </select>
+                        ) : f.name === "Authors" ? (
+                          <select
+                            value={userFilters.author}
+                            onChange={(e) => {
+                              setUserFilters({
                                 ...userFilters,
                                 author: e.target.value,
-                              })
-                            : null
-                        }
-                      >
-                        {f.name === "Categories" ? (
-                          categories.map((c) => (
-                            <MenuItem value={c.name} key={c._id}>
-                              {c.name}
-                            </MenuItem>
-                          ))
-                        ) : f.name === "Authors" ? (
-                          authors.map((a) => (
-                            <MenuItem value={a.name} key={a._id}>
-                              {a.name}
-                            </MenuItem>
-                          ))
+                              });
+                            }}
+                          >
+                            {authors.map((a) => (
+                              <option value={a.name} key={a._id}>
+                                {a.name}
+                              </option>
+                            ))}
+                          </select>
                         ) : (
                           <MenuItem>
                             <div className='d-flex justify-content-between'>

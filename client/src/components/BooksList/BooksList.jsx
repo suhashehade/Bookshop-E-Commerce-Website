@@ -53,18 +53,15 @@ function BooksList(props) {
     setItemOffset(newOffset);
   };
 
-  const filteredBooks = books.filter((book) => {
+  const filteredBooks = currentItems.filter((book) => {
     const meetsCategory =
-      !userFilters.category ||
-      currentItems.category.name === userFilters.category;
+      !userFilters.category || book.category.name === userFilters.category;
     const meetsAuthor =
-      !userFilters.author || currentItems.author.name === userFilters.author;
+      !userFilters.author || book.author.name === userFilters.author;
     const meetsMinPrice =
-      !userFilters.minPrice ||
-      currentItems.price >= parseFloat(userFilters.minPrice);
+      !userFilters.minPrice || book.price >= parseFloat(userFilters.minPrice);
     const meetsMaxPrice =
-      !userFilters.maxPrice ||
-      currentItems.price <= parseFloat(userFilters.maxPrice);
+      !userFilters.maxPrice || book.price <= parseFloat(userFilters.maxPrice);
     return meetsCategory && meetsAuthor && meetsMinPrice && meetsMaxPrice;
   });
 

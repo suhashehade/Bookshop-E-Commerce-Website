@@ -47,7 +47,7 @@ function BooksList(props) {
     return meetsCategory && meetsAuthor && meetsMinPrice && meetsMaxPrice;
   });
   const endOffset = itemOffset + itemsPerPage;
-  const currentItems = filteredBooks().slice(itemOffset, endOffset);
+  const currentItems = filteredBooks.slice(itemOffset, endOffset);
   const pageCount = Math.ceil(books.length / itemsPerPage);
 
   const menuToggle = () => {
@@ -166,7 +166,7 @@ function BooksList(props) {
             </ProSidebar>
           </div>
           <div className='row books all-books'>
-            {currentItems
+            {filteredBooks
               .filter((b) => b.title.toLowerCase().includes(keyword))
               .map((b) => (
                 <div className='col-lg-4 col-md-12'>

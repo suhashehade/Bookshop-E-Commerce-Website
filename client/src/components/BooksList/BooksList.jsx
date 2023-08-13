@@ -166,7 +166,7 @@ function BooksList(props) {
             </ProSidebar>
           </div>
           <div className='row books all-books'>
-            {filteredBooks
+            {currentItems
               .filter((b) => b.title.toLowerCase().includes(keyword))
               .map((b) => (
                 <div className='col-lg-4 col-md-12'>

@@ -82,6 +82,8 @@ function BooksList(props) {
                       <SubMenu title={f.name}>
                         {f.name === "Categories" ? (
                           <select
+                            multiple
+                            class='form-control'
                             value={userFilters.category}
                             onChange={(e) => {
                               setUserFilters({
@@ -98,6 +100,8 @@ function BooksList(props) {
                           </select>
                         ) : f.name === "Authors" ? (
                           <select
+                            multiple
+                            class='form-control'
                             value={userFilters.author}
                             onChange={(e) => {
                               setUserFilters({

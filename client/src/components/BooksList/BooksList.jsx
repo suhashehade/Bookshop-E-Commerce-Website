@@ -15,15 +15,12 @@ import {
 
 import "react-pro-sidebar/dist/css/styles.css";
 import Footer from "../Footer/Footer";
+import ReactPaginate from "react-paginate";
 
 function BooksList(props) {
   const [keyword, setKeyword] = useState("");
   const [menuCollapse, setMenuCollapse] = useState(false);
-  const [category, setCategory] = useState("");
-  const [author, setAuthor] = useState("");
-  // const [minPrice, setMinPrice] = useState(0);
-  // const [maxPrice, setMaxPrice] = useState(100);
-
+  const [itemOffset, setItemOffset] = useState(0);
   const [userFilters, setUserFilters] = useState({
     category: "",
     author: "",
@@ -36,22 +33,38 @@ function BooksList(props) {
   let books = props.books;
   let authors = props.authors;
 
+  const itemsPerPage = 6;
+
+  const endOffset = itemOffset + itemsPerPage;
+  const currentItems = books.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil(books.length / itemsPerPage);
+
   const menuToggle = () => {
     setMenuCollapse(!menuCollapse);
   };
   const search = (title) => {
     setKeyword(title);
   };
+  const handlePageClick = (event) => {
+    const newOffset = (event.selected * itemsPerPage) % books.length;
+    console.log(
+      `User requested page number ${event.selected}, which is offset ${newOffset}`,
+    );
+    setItemOffset(newOffset);
+  };
 
   const filteredBooks = books.filter((book) => {
     const meetsCategory =
-      !userFilters.category || book.category.name === userFilters.category;
+      !userFilters.category ||
+      currentItems.category.name === userFilters.category;
     const meetsAuthor =
-      !userFilters.author || book.author.name === userFilters.author;
+      !userFilters.author || currentItems.author.name === userFilters.author;
     const meetsMinPrice =
-      !userFilters.minPrice || book.price >= parseFloat(userFilters.minPrice);
+      !userFilters.minPrice ||
+      currentItems.price >= parseFloat(userFilters.minPrice);
     const meetsMaxPrice =
-      !userFilters.maxPrice || book.price <= parseFloat(userFilters.maxPrice);
+      !userFilters.maxPrice ||
+      currentItems.price <= parseFloat(userFilters.maxPrice);
     return meetsCategory && meetsAuthor && meetsMinPrice && meetsMaxPrice;
   });
 
@@ -164,6 +177,15 @@ function BooksList(props) {
                   <BookCard key={b.id} book={b} />
                 </div>
               ))}
+            <ReactPaginate
+              breakLabel='...'
+              nextLabel='next >'
+              onPageChange={handlePageClick}
+              pageRangeDisplayed={5}
+              pageCount={pageCount}
+              previousLabel='< previous'
+              renderOnZeroPageCount={null}
+            />
           </div>
         </div>
       </div>

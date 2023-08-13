@@ -47,7 +47,7 @@ function BooksList(props) {
     return meetsCategory && meetsAuthor && meetsMinPrice && meetsMaxPrice;
   });
   const endOffset = itemOffset + itemsPerPage;
-  const currentItems = filteredBooks.slice(itemOffset, endOffset);
+  const currentItems = filteredBooks().slice(itemOffset, endOffset);
   const pageCount = Math.ceil(books.length / itemsPerPage);
 
   const menuToggle = () => {

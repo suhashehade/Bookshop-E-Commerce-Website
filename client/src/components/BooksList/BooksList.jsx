@@ -38,21 +38,22 @@ function BooksList(props) {
 
   const filter = (e) => {
     let target = e.target;
-    if (target.id === "category") {
-      setCategory(target.value);
-    } else {
-      if (target.id === "author") {
-        setAuthor(target.value);
-      } else {
-        if (target.id === "minPrice") {
-          setMinPrice(target.value);
-        } else {
-          if (target.id === "maxPrice") {
-            setMaxPrice(target.value);
-          }
-        }
-      }
-    }
+    console.log(target);
+    // if (target.name === "category") {
+    //   setCategory(target.value);
+    // } else {
+    //   if (target.name === "author") {
+    //     setAuthor(target.value);
+    //   } else {
+    //     if (target.name === "minPrice") {
+    //       setMinPrice(target.value);
+    //     } else {
+    //       if (target.name === "maxPrice") {
+    //         setMaxPrice(target.value);
+    //       }
+    //     }
+    //   }
+    // }
   };
 
   return (
@@ -85,7 +86,7 @@ function BooksList(props) {
                             <MenuItem
                               value={c.name}
                               key={c._id}
-                              id='category'
+                              name='category'
                               onSelect={filter}
                             >
                               {c.name}
@@ -96,7 +97,7 @@ function BooksList(props) {
                             <MenuItem
                               value={a.name}
                               key={a._id}
-                              id='author'
+                              name='author'
                               onSelect={filter}
                             >
                               {a.name}
@@ -108,7 +109,7 @@ function BooksList(props) {
                               <div classname=''>
                                 <input
                                   type='number'
-                                  id='minPrice'
+                                  name='minPrice'
                                   value={minPrice}
                                   onChange={filter}
                                 ></input>
@@ -117,7 +118,7 @@ function BooksList(props) {
                               <div className=''>
                                 <input
                                   type='number'
-                                  id='maxPrice'
+                                  name='maxPrice'
                                   value={maxPrice}
                                   onChange={filter}
                                 ></input>
